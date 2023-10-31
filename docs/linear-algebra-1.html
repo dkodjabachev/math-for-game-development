@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Mathematics for Game Development</title>
-  <meta name="description" content="Page not found | Mathematics for Game Development" />
+  <title>2 Linear algebra | Mathematics for Game Development</title>
+  <meta name="description" content="2 Linear algebra | Mathematics for Game Development" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Mathematics for Game Development" />
+  <meta property="og:title" content="2 Linear algebra | Mathematics for Game Development" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Mathematics for Game Development" />
+  <meta name="twitter:title" content="2 Linear algebra | Mathematics for Game Development" />
   
   
   
@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
+<link rel="prev" href="background-material-1.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -107,18 +107,64 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="linear-algebra-1" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Linear algebra<a href="linear-algebra-1.html#linear-algebra-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="algebraic-vectors" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Algebraic vectors<a href="linear-algebra-1.html#algebraic-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-9" class="definition"><strong>Definition 2.1  </strong></span>An <em><span class="math inline">\(n\)</span>-dimensional vector</em> is an <span class="math inline">\(n\)</span>-tuple <span class="math inline">\(\bar{x} = (x_1,\ldots,x_n)\)</span>, where <span class="math inline">\(x_i \in \mathbb{R}\)</span>. The <span class="math inline">\(x_i\)</span> are called the <em>coordinates</em> of the vector.</p>
+</div>
+<p>We will denote the collection of all <span class="math inline">\(n\)</span>-dimensional vectors by <span class="math inline">\(\mathbb{R}^n\)</span>, i.e.</p>
+<p><span class="math display">\[
+\mathbb{R}^n \overset{\text{def}}{=} \{\bar{x}=(x_1,\ldots,x_n) | x_i \in \mathbb{R} \}.
+\]</span></p>
+<p>This agrees with the already introduced notation for the Cartesian product of sets, i.e. <span class="math inline">\(\mathbb{R}^n\)</span> is nothing more than the <span class="math inline">\(n\)</span>-fold Cartesian product of <span class="math inline">\(\mathbb{R}\)</span> with itself</p>
+<p><span class="math display">\[
+\mathbb{R}^n = \mathbb{R} \times \mathbb{R} \times \cdots \times \mathbb{R}.
+\]</span></p>
+<p>A priori this is just a set. We can equip it the following two operations:</p>
+<ol style="list-style-type: decimal">
+<li><em>Addition of vectors</em>: given two vectors <span class="math inline">\(\bar{x},\bar{y} \in \mathbb{R}^n\)</span> we define their sum to be the vector</li>
+</ol>
+<p><span class="math display">\[
+\bar{x} + \bar{y} \overset{\text{def}}{=} (x_1 + y_1, \ldots, x_n + y_n) \in \mathbb{R}^n.
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li><em>Scalar multiplication</em>: given a vector <span class="math inline">\(\bar{x} \in \mathbb{R}^n\)</span> and a real number <span class="math inline">\(\lambda \in \mathbb{R}\)</span> (also referred to as a <em>scalar</em>) we define the scalar multiplication of <span class="math inline">\(\bar{x}\)</span> by <span class="math inline">\(\lambda\)</span> to be the vector</li>
+</ol>
+<p><span class="math display">\[
+\lambda \bar{x} \overset{\text{def}}{=} (\lambda x_1, \ldots, \lambda x_n) \in \mathbb{R}^b.
+\]</span></p>
+<p>The vector addition and scalar multiplication operations satisfy the following properties:</p>
+<ol style="list-style-type: decimal">
+<li>Vector addition is associative: <span class="math inline">\(\bar{x} + (\bar{y} + \bar{z}) = (\bar{x} + \bar{y}) + \bar{z}\)</span>.</li>
+<li>Vector addition is also commutative: <span class="math inline">\(\bar{x} + \bar{y} = \bar{y} + \bar{x}\)</span>.</li>
+<li>There exists a special vector <span class="math inline">\(\bar{0}\)</span>, called the <em>zero vector</em>, such that <span class="math inline">\(\bar{0} + \bar{x} = \bar{x} + \bar{0} = \bar{x}\)</span>.</li>
+<li>There exists an <em>inverse</em> vector <span class="math inline">\(-\bar{x}\)</span>, such that <span class="math inline">\(\bar{x} + (-\bar{x}) = \bar{0}\)</span>.</li>
+<li>Scalar multiplication distributes over vector addition: <span class="math inline">\(\lambda (\bar{x} + \bar{y}) = \lambda \bar{x} + \lambda \bar{y}\)</span>.</li>
+<li>Scalar multiplication distributes over addition of real numbers: <span class="math inline">\((\lambda + \gamma) \bar{x} = \lambda \bar{x} + \gamma \bar{x}\)</span>.</li>
+<li>Scalar multiplication is compatible with multiplication of real numbers: <span class="math inline">\(\lambda (\gamma \bar{x}) = (\lambda \gamma) \bar{x}\)</span>.</li>
+</ol>
+<p><span class="math inline">\(\mathbb{R}^n\)</span> together with the operations of vector addition and scalar multiplication is called an <em><span class="math inline">\(n\)</span>-dimensional real vector space</em>.</p>
+<!--
+::: {.definition}
+A collection of vectors $\bar{x}_1,\ldots,\bar{x}_n$ is said to be *linearly dependent* if there exist real numbers $\lambda_i$ for $i = 1,\ldots,n$ with at least one $\lambda_i \neq 0$ such that
+
+$$
+  \lambda_1 \bar{x}_1 + \cdots + \lambda_n \bar{x}_n = 0.
+$$
+Otherwise, if the above equation is satisfied only if $\lambda_i = 0$ for $i = 1,\ldots,n$ we say that the vectors $\bar{x}_1,\ldots,\bar{x}_n$ area *linearly independent*. 
+:::
+-->
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
+<a href="background-material-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>

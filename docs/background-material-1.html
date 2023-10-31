@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="index.html"/>
-
+<link rel="next" href="linear-algebra-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -71,14 +71,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>List of topics</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#background-material"><i class="fa fa-check"></i>Background material</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#linear-algebra"><i class="fa fa-check"></i>Linear algebra</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#analytic-geometry"><i class="fa fa-check"></i>Analytic geometry</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#mathematical-analysis"><i class="fa fa-check"></i>Mathematical analysis</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#numerical-methods"><i class="fa fa-check"></i>Numerical methods</a></li>
-</ul></li>
+<li><a href="index.html#section" id="toc-section"></a></li>
 <li class="chapter" data-level="1" data-path="background-material-1.html"><a href="background-material-1.html"><i class="fa fa-check"></i><b>1</b> Background material</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="background-material-1.html"><a href="background-material-1.html#set-theory"><i class="fa fa-check"></i><b>1.1</b> Set theory</a>
@@ -88,6 +81,14 @@
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="background-material-1.html"><a href="background-material-1.html#functions"><i class="fa fa-check"></i><b>1.2</b> Functions</a></li>
 <li class="chapter" data-level="1.3" data-path="background-material-1.html"><a href="background-material-1.html#polynomials"><i class="fa fa-check"></i><b>1.3</b> Polynomials</a></li>
+<li class="chapter" data-level="1.4" data-path="background-material-1.html"><a href="background-material-1.html#trigonometric-functions"><i class="fa fa-check"></i><b>1.4</b> Trigonometric functions</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="background-material-1.html"><a href="background-material-1.html#trigonometric-identities"><i class="fa fa-check"></i><b>1.4.1</b> Trigonometric identities</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="linear-algebra-1.html"><a href="linear-algebra-1.html"><i class="fa fa-check"></i><b>2</b> Linear algebra</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="linear-algebra-1.html"><a href="linear-algebra-1.html#algebraic-vectors"><i class="fa fa-check"></i><b>2.1</b> Algebraic vectors</a></li>
 </ul></li>
 </ul>
 
@@ -115,33 +116,30 @@
 <div class="definition">
 <p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 1.1  </strong></span>A <em>set</em> is just a collection of things. The things a set contains can be any mathematical object and are called its <em>elements</em>. We will denote sets with capital letters like <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and elements of sets with lowercase letters like <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. If <span class="math inline">\(a\)</span> is an element of the set <span class="math inline">\(A\)</span> we will write <span class="math inline">\(a \in A\)</span> and if <span class="math inline">\(a\)</span> is not an element of the set <span class="math inline">\(A\)</span> we will write <span class="math inline">\(a \notin A\)</span>.</p>
 </div>
-<p>There are a number of ways one can define a set. If a set is finite, we can just enumerate all of its elements.</p>
+<p>There are a number of ways one can define a set. If a set is finite, we can just enumerate all of its elements, like this</p>
 <p><span class="math display">\[
 A = \{1, 2, 3, 4, 5, 6, 7\}.
 \]</span>
-A set with an infinite number of elements can be defined by enumerating enough of its elements to indicate a pattern among them and then placing an elipsis – <span class="math inline">\(\ldots\)</span> – at either end of the list to indicate that the list continues forever.</p>
+A set with an infinite number of elements can be defined by enumerating enough of its elements to indicate a pattern among them and then placing an ellipsis (<span class="math inline">\(\ldots\)</span>) at either end of the list to indicate that the list continues forever, for example</p>
 <p><span class="math display">\[
 B = \{0, 3, 6, 9, \ldots\}.
 \]</span></p>
 <p>A set with an infinite size can aslo be defined by specifying a characteristic property that all of its elements have. For example</p>
 <p><span class="math display">\[
-C = \{x | x \text{ is an even natural number}\}
-\]</span></p>
-<p>or</p>
-<p><span class="math display">\[
-D = \{x | x \text{ is an integer and } x \bmod 3 = 0\}
+C = \{x | x \text{ is an even natural number}\}.
 \]</span></p>
 <div class="definition">
 <p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 1.2  </strong></span>The <em>size</em> of a set <span class="math inline">\(A\)</span>, also referred to as the <em>cardinality</em> of the set, is the number of elements in the set and is denoted by <span class="math inline">\(|A|\)</span>. The size of a set can be either finite or infinite.</p>
 </div>
-<p>In the examples above, <span class="math inline">\(|A| = 7\)</span> and <span class="math inline">\(|B| = |C| = |D| = \infty\)</span>. There is one special set that contains no elements and whose size is zero – the <em>empty set</em>, denoted by <span class="math inline">\(\emptyset\)</span>. If we are to define it using the notation above, <span class="math inline">\(\emptyset = \{\}\)</span>.</p>
+<p>In the examples above, <span class="math inline">\(|A| = 7\)</span> and <span class="math inline">\(|B| = |C| = \infty\)</span>. There is one special set that contains no elements and whose size is zero, It is called the <em>empty set</em> and is denoted by the symbol <span class="math inline">\(\emptyset\)</span>. If we are to define it using the notation above, <span class="math inline">\(\emptyset = \{\}\)</span>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 1.3  </strong></span>Given two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, it can happen that every element of <span class="math inline">\(A\)</span> is an element of <span class="math inline">\(B\)</span>. In this case we say that <span class="math inline">\(A\)</span> is a <em>subset</em> of <span class="math inline">\(B\)</span> and we write <span class="math inline">\(A \subseteq B\)</span>. If <span class="math inline">\(A\)</span> is a subset of <span class="math inline">\(B\)</span> but it is not equal to <span class="math inline">\(B\)</span>, we say that <span class="math inline">\(A\)</span> is a <em>proper subset</em> of <span class="math inline">\(B\)</span> and write <span class="math inline">\(A \subset B\)</span>.</p>
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 1.3  </strong></span>Given two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, it can happen that every element of <span class="math inline">\(A\)</span> is an element of <span class="math inline">\(B\)</span>. In this case we say that <span class="math inline">\(A\)</span> is a <em>subset</em> of <span class="math inline">\(B\)</span> and we write <span class="math inline">\(A \subseteq B\)</span>. If <span class="math inline">\(A\)</span> is a subset of <span class="math inline">\(B\)</span>, but it is not equal to <span class="math inline">\(B\)</span>, we say that <span class="math inline">\(A\)</span> is a <em>proper subset</em> of <span class="math inline">\(B\)</span> and write <span class="math inline">\(A \subset B\)</span>.</p>
 </div>
 <p>Examples.</p>
 <ol style="list-style-type: decimal">
 <li>The empty set is a subset of <em>any</em> other set <span class="math inline">\(A\)</span>, i.e. <span class="math inline">\(\emptyset \subseteq A\)</span>.</li>
 <li>Any set is a subset of itself, <span class="math inline">\(A \subseteq A\)</span>.</li>
+<li><span class="math inline">\(\{a,b\} \subset \{a,b,c,d,e\}\)</span>.</li>
 <li><span class="math inline">\(\{0,2,4,6,\ldots\} \subset \{0,1,2,3,\ldots\}\)</span>.</li>
 </ol>
 </div>
@@ -149,22 +147,34 @@ D = \{x | x \text{ is an integer and } x \bmod 3 = 0\}
 <h3><span class="header-section-number">1.1.2</span> Operations on sets<a href="background-material-1.html#operations-on-sets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets. We can form a number of other sets from the elements of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> via the following operations.</p>
 <ul>
-<li><p>The <em>union</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set containing both the elements of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>:
-<span class="math display">\[
-A \cup B = \{x | x \in A \text{ or } x \in B\}
-\]</span></p></li>
-<li><p>The <em>intersection</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set containing the elements that are <em>both</em> in <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>:
-<span class="math display">\[
-A \cap B = \{x | x \in A \text{ and } x \in B\}
-\]</span></p></li>
-<li><p>The <em>difference</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set of all elements in <span class="math inline">\(A\)</span> that are <em>not</em> in <span class="math inline">\(B\)</span>:
-<span class="math display">\[
-A \setminus B = \{x | x \in A \text{ and } x \notin B\}
-\]</span></p></li>
-<li><p>The <em>cartesian product</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set of all <em>ordered</em> pairs of elements, the first one being from <span class="math inline">\(A\)</span> and the second, from <span class="math inline">\(B\)</span>:</p></li>
+<li>The <em>union</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set containing both the elements of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>:</li>
 </ul>
 <p><span class="math display">\[
-A \times B = \{(a,b) | a \in A \text{ and } b \in B\}
+A \cup B \overset{\text{def}}{=} \{x | x \in A \text{ or } x \in B\}.
+\]</span></p>
+<ul>
+<li>The <em>intersection</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set containing the common elements of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+A \cap B \overset{\text{def}}{=} \{x | x \in A \text{ and } x \in B\}.
+\]</span></p>
+<ul>
+<li>The <em>difference</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set of all elements in <span class="math inline">\(A\)</span> that are <em>not</em> in <span class="math inline">\(B\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+A \setminus B \overset{\text{def}}{=} \{x | x \in A \text{ and } x \notin B\}.
+\]</span></p>
+<ul>
+<li>If <span class="math inline">\(B \subset A\)</span>, then the <em>complement</em> of <span class="math inline">\(B\)</span> is the set of all elements in <span class="math inline">\(A\)</span> that are not in <span class="math inline">\(B\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+\bar{B} \overset{\text{def}}{=} \{a | a \in A \text{ and } a \notin B \}.
+\]</span></p>
+<ul>
+<li>The <em>Cartesian product</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set of all <em>ordered</em> pairs of elements, the first one being from <span class="math inline">\(A\)</span> and the second from <span class="math inline">\(B\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+A \times B \overset{\text{def}}{=} \{(a,b) | a \in A \text{ and } b \in B\}.
 \]</span></p>
 <p>Below are listed some commonly used sets and the letters used to denote them. They are represented using the so called blackboard bold typeface.</p>
 <ol style="list-style-type: decimal">
@@ -175,10 +185,7 @@ A \times B = \{(a,b) | a \in A \text{ and } b \in B\}
 <li><span class="math inline">\(\mathbb{R} \setminus \mathbb{Q}\)</span> is the set of irrational numbers, e.g. <span class="math inline">\(\pi, e, \sqrt 2\)</span> etc.</li>
 <li><span class="math inline">\(\mathbb{C}\)</span> is the set of complex numbers.</li>
 </ol>
-<p>We have the following subset inclusions among the sets above:</p>
-<p><span class="math display">\[
-\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}.
-\]</span></p>
+<p>We have the following subset inclusions among the sets above: <span class="math inline">\(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}.\)</span></p>
 </div>
 </div>
 <div id="functions" class="section level2 hasAnchor" number="1.2">
@@ -239,7 +246,46 @@ x^5 + x - 1 = 0
 \]</span></p>
 <p>cannot be solved in radicals.</p>
 </div>
+</div>
+<div id="trigonometric-functions" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Trigonometric functions<a href="background-material-1.html#trigonometric-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="trigonometric-identities" class="section level3 hasAnchor" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Trigonometric identities<a href="background-material-1.html#trigonometric-identities" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Pythagorean identity</li>
+</ul>
+<p><span class="math display">\[
+\sin^2(\alpha) + \cos^2(\alpha) = 1.
+\]</span></p>
+<ul>
+<li>Sum and difference of angles identites</li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+\sin(\alpha \pm \beta) &amp;= \sin(\alpha)\cos(\beta) \pm \cos(\beta)\sin(\alpha), \\
+\cos(\alpha \pm \beta) &amp;= \cos(\alpha)\cos(\beta) \mp \sin(\alpha)\sin(\beta).
+\end{align}
+\]</span></p>
+<ul>
+<li>Double angle identities</li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+  \sin(2\alpha) &amp;= 2\sin(\alpha)\cos(\alpha) = (\sin(\alpha) + \cos(\alpha))^2 - 1, \\
+  \cos(2\alpha) &amp;= \cos^2(\alpha) - \sin^2(\alpha) = 2\cos^2(\alpha) - 1 = 1 - 2\sin^2(\alpha).
+\end{align}
+\]</span></p>
+<ul>
+<li>Power reduction identities</li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+  \sin^2(\alpha) = 1 - \cos^2(\alpha) = \frac{1 - \cos(2\alpha)}{2}, \\
+  \cos^2(\alpha) = 1 - \sin^2(\alpha) = \frac{1 + \cos(2\alpha)}{2}
+\end{align}
+\]</span></p>
 
+</div>
 </div>
 </div>
             </section>
@@ -247,8 +293,8 @@ x^5 + x - 1 = 0
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="linear-algebra-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,0 +1,56 @@
+# Linear algebra
+
+## Algebraic vectors
+
+::: {.definition}
+An *$n$-dimensional vector* is an $n$-tuple $\bar{x} = (x_1,\ldots,x_n)$, where $x_i \in \mathbb{R}$. The $x_i$ are called the *coordinates* of the vector.
+:::
+
+We will denote the collection of all $n$-dimensional vectors by $\mathbb{R}^n$, i.e.
+
+$$
+\mathbb{R}^n \overset{\text{def}}{=} \{\bar{x}=(x_1,\ldots,x_n) | x_i \in \mathbb{R} \}.
+$$
+
+This agrees with the already introduced notation for the Cartesian product of sets, i.e. $\mathbb{R}^n$ is nothing more than the $n$-fold Cartesian product of $\mathbb{R}$ with itself
+
+$$
+\mathbb{R}^n = \mathbb{R} \times \mathbb{R} \times \cdots \times \mathbb{R}.
+$$
+
+A priori this is just a set. We can equip it the following two operations:
+
+1. *Addition of vectors*: given two vectors $\bar{x},\bar{y} \in \mathbb{R}^n$ we define their sum to be the vector
+
+$$
+\bar{x} + \bar{y} \overset{\text{def}}{=} (x_1 + y_1, \ldots, x_n + y_n) \in \mathbb{R}^n.
+$$
+
+2. *Scalar multiplication*: given a vector $\bar{x} \in \mathbb{R}^n$ and a real number $\lambda \in \mathbb{R}$ (also referred to as a *scalar*) we define the scalar multiplication of $\bar{x}$ by $\lambda$ to be the vector
+
+$$
+\lambda \bar{x} \overset{\text{def}}{=} (\lambda x_1, \ldots, \lambda x_n) \in \mathbb{R}^b.
+$$
+
+The vector addition and scalar multiplication operations satisfy the following properties:
+
+1. Vector addition is associative: $\bar{x} + (\bar{y} + \bar{z}) = (\bar{x} + \bar{y}) + \bar{z}$.
+2. Vector addition is also commutative: $\bar{x} + \bar{y} = \bar{y} + \bar{x}$.
+3. There exists a special vector $\bar{0}$, called the *zero vector*, such that $\bar{0} + \bar{x} = \bar{x} + \bar{0} = \bar{x}$.
+4. There exists an *inverse* vector $-\bar{x}$, such that $\bar{x} + (-\bar{x}) = \bar{0}$.
+5. Scalar multiplication distributes over vector addition: $\lambda (\bar{x} + \bar{y}) = \lambda \bar{x} + \lambda \bar{y}$.
+6. Scalar multiplication distributes over addition of real numbers: $(\lambda + \gamma) \bar{x} = \lambda \bar{x} + \gamma \bar{x}$.
+7. Scalar multiplication is compatible with multiplication of real numbers: $\lambda (\gamma \bar{x}) = (\lambda \gamma) \bar{x}$.
+
+$\mathbb{R}^n$ together with the operations of vector addition and scalar multiplication is called an *$n$-dimensional real vector space*.
+
+<!--
+::: {.definition}
+A collection of vectors $\bar{x}_1,\ldots,\bar{x}_n$ is said to be *linearly dependent* if there exist real numbers $\lambda_i$ for $i = 1,\ldots,n$ with at least one $\lambda_i \neq 0$ such that
+
+$$
+  \lambda_1 \bar{x}_1 + \cdots + \lambda_n \bar{x}_n = 0.
+$$
+Otherwise, if the above equation is satisfied only if $\lambda_i = 0$ for $i = 1,\ldots,n$ we say that the vectors $\bar{x}_1,\ldots,\bar{x}_n$ area *linearly independent*. 
+:::
+-->

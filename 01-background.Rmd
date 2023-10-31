@@ -8,12 +8,12 @@
 A *set* is just a collection of things. The things a set contains can be any mathematical object and are called its *elements*. We will denote sets with capital letters like $A$, $B$, $X$ and $Y$ and elements of sets with lowercase letters like $a$, $b$, $x$ and $y$. If $a$ is an element of the set $A$ we will write $a \in A$ and if $a$ is not an element of the set $A$ we will write $a \notin A$.
 :::
 
-There are a number of ways one can define a set. If a set is finite, we can just enumerate all of its elements.
+There are a number of ways one can define a set. If a set is finite, we can just enumerate all of its elements, like this
 
 $$
 A = \{1, 2, 3, 4, 5, 6, 7\}.
 $$
-A set with an infinite number of elements can be defined by enumerating enough of its elements to indicate a pattern among them and then placing an elipsis -- $\ldots$ -- at either end of the list to indicate that the list continues forever.
+A set with an infinite number of elements can be defined by enumerating enough of its elements to indicate a pattern among them and then placing an ellipsis ($\ldots$) at either end of the list to indicate that the list continues forever, for example
 
 $$
 B = \{0, 3, 6, 9, \ldots\}.
@@ -22,29 +22,25 @@ $$
 A set with an infinite size can aslo be defined by specifying a characteristic property that all of its elements have. For example
 
 $$
-C = \{x | x \text{ is an even natural number}\}
+C = \{x | x \text{ is an even natural number}\}.
 $$
 
-or
-
-$$
-D = \{x | x \text{ is an integer and } x \bmod 3 = 0\}
-$$
 
 ::: {.definition}
 The *size* of a set $A$, also referred to as the *cardinality* of the set, is the number of elements in the set and is denoted by $|A|$. The size of a set can be either finite or infinite.
 :::
 
-In the examples above, $|A| = 7$ and $|B| = |C| = |D| = \infty$. There is one special set that contains no elements and whose size is zero -- the *empty set*, denoted by $\emptyset$. If we are to define it using the notation above, $\emptyset = \{\}$.
+In the examples above, $|A| = 7$ and $|B| = |C| = \infty$. There is one special set that contains no elements and whose size is zero, It is called the *empty set* and is denoted by the symbol $\emptyset$. If we are to define it using the notation above, $\emptyset = \{\}$.
 
 ::: {.definition}
-Given two sets $A$ and $B$, it can happen that every element of $A$ is an element of $B$. In this case we say that $A$ is a *subset* of $B$ and we write $A \subseteq B$. If $A$ is a subset of $B$ but it is not equal to $B$, we say that $A$ is a *proper subset* of $B$ and write $A \subset B$.
+Given two sets $A$ and $B$, it can happen that every element of $A$ is an element of $B$. In this case we say that $A$ is a *subset* of $B$ and we write $A \subseteq B$. If $A$ is a subset of $B$, but it is not equal to $B$, we say that $A$ is a *proper subset* of $B$ and write $A \subset B$.
 :::
 
 Examples.
 
 1. The empty set is a subset of *any* other set $A$, i.e. $\emptyset \subseteq A$.
 2. Any set is a subset of itself, $A \subseteq A$.
+3. $\{a,b\} \subset \{a,b,c,d,e\}$.
 3. $\{0,2,4,6,\ldots\} \subset \{0,1,2,3,\ldots\}$.
 
 ### Operations on sets
@@ -52,25 +48,35 @@ Examples.
 Let $A$ and $B$ be two sets. We can form a number of other sets from the elements of $A$ and $B$ via the following operations.
 
 - The *union* of $A$ and $B$ is the set containing both the elements of $A$ and $B$:
+
 $$
-A \cup B = \{x | x \in A \text{ or } x \in B\}
+A \cup B \overset{\text{def}}{=} \{x | x \in A \text{ or } x \in B\}.
 $$
 
-- The *intersection* of $A$ and $B$ is the set containing the elements that are *both* in $A$ and $B$:
+- The *intersection* of $A$ and $B$ is the set containing the common elements of $A$ and $B$:
+
 $$
-A \cap B = \{x | x \in A \text{ and } x \in B\}
+A \cap B \overset{\text{def}}{=} \{x | x \in A \text{ and } x \in B\}.
 $$
 
 - The *difference* of $A$ and $B$ is the set of all elements in $A$ that are *not* in $B$:
-$$
-A \setminus B = \{x | x \in A \text{ and } x \notin B\}
-$$
-
-- The *cartesian product* of $A$ and $B$ is the set of all *ordered* pairs of elements, the first one being from $A$ and the second, from $B$:
 
 $$
-A \times B = \{(a,b) | a \in A \text{ and } b \in B\}
+A \setminus B \overset{\text{def}}{=} \{x | x \in A \text{ and } x \notin B\}.
 $$
+
+- If $B \subset A$, then the *complement* of $B$ is the set of all elements in $A$ that are not in $B$:
+
+$$
+\bar{B} \overset{\text{def}}{=} \{a | a \in A \text{ and } a \notin B \}.
+$$
+
+- The *Cartesian product* of $A$ and $B$ is the set of all *ordered* pairs of elements, the first one being from $A$ and the second from $B$:
+
+$$
+A \times B \overset{\text{def}}{=} \{(a,b) | a \in A \text{ and } b \in B\}.
+$$
+
 
 Below are listed some commonly used sets and the letters used to denote them. They are represented using the so called blackboard bold typeface.
 
@@ -81,11 +87,7 @@ Below are listed some commonly used sets and the letters used to denote them. Th
 5. $\mathbb{R} \setminus \mathbb{Q}$ is the set of irrational numbers, e.g. $\pi, e, \sqrt 2$ etc.
 6. $\mathbb{C}$ is the set of complex numbers.
 
-We have the following subset inclusions among the sets above:
-
-$$
-\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}.
-$$
+We have the following subset inclusions among the sets above: $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}.$
 
 ## Functions
 
@@ -153,3 +155,41 @@ $$
 
 cannot be solved in radicals.
 :::
+
+## Trigonometric functions
+
+
+### Trigonometric identities
+
+* Pythagorean identity
+
+$$
+\sin^2(\alpha) + \cos^2(\alpha) = 1.
+$$
+
+* Sum and difference of angles identites
+
+$$
+\begin{align}
+\sin(\alpha \pm \beta) &= \sin(\alpha)\cos(\beta) \pm \cos(\beta)\sin(\alpha), \\
+\cos(\alpha \pm \beta) &= \cos(\alpha)\cos(\beta) \mp \sin(\alpha)\sin(\beta).
+\end{align}
+$$
+
+* Double angle identities
+
+$$
+\begin{align}
+  \sin(2\alpha) &= 2\sin(\alpha)\cos(\alpha) = (\sin(\alpha) + \cos(\alpha))^2 - 1, \\
+  \cos(2\alpha) &= \cos^2(\alpha) - \sin^2(\alpha) = 2\cos^2(\alpha) - 1 = 1 - 2\sin^2(\alpha).
+\end{align}
+$$
+
+* Power reduction identities
+
+$$
+\begin{align}
+  \sin^2(\alpha) = 1 - \cos^2(\alpha) = \frac{1 - \cos(2\alpha)}{2}, \\
+  \cos^2(\alpha) = 1 - \sin^2(\alpha) = \frac{1 + \cos(2\alpha)}{2}
+\end{align}
+$$

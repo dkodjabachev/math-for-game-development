@@ -4,9 +4,14 @@ def:unlabeled-div-3
 def:unlabeled-div-4
 def:unlabeled-div-6
 thm:unlabeled-div-7
+def:unlabeled-div-9
 background-material-1
 set-theory
 basic-definitions
 operations-on-sets
 functions
 polynomials
+trigonometric-functions
+trigonometric-identities
+linear-algebra-1
+algebraic-vectors
