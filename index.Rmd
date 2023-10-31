@@ -1,0 +1,38 @@
+---
+title: "Mathematics for Game Development"
+author: "Dimitar Kodjabachev"
+site: bookdown::bookdown_site
+documentclass: book
+output_dir: "docs"
+---
+
+# List of topics {-}
+
+## Background material {-}
+1. Sets, functions, polynomials, functions
+2. Trigonometric functions and identities
+
+## Linear algebra {-}
+1. Algebraic vectors
+2. Matrices and matrix operations
+3. Determinants and inverse matrices
+4. Systems of linear equations
+
+## Analytic geometry {-}
+1. Geometric vectors
+2. Coordinate systems, bases and dimension
+3. Scalar, cross and triple products of vectors
+4. Affine transformations
+5. Projections
+6. Equations of lines, planes, curves and surfaces
+7. Intersection and distance formulas
+8. Complex numbers and quaternions
+
+## Mathematical analysis {-}
+1. Derivatives
+2. Definite and indefinite integrals
+
+## Numerical methods {-}
+1. Approximation of functions -- splines, B-splines
+2. Root-finding algorithms
+2. Numerical differentiation and integration

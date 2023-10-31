@@ -1,2 +1,1 @@
-# math-for-game-development
-Mathematics for Game Development
+### Lecture Notes on Mathematics for Game Development ###
