@@ -29,7 +29,7 @@ $$
 2. *Scalar multiplication*: given a vector $\bar{x} \in \mathbb{R}^n$ and a real number $\lambda \in \mathbb{R}$ (also referred to as a *scalar*) we define the scalar multiplication of $\bar{x}$ by $\lambda$ to be the vector
 
 $$
-\lambda \bar{x} \overset{\text{def}}{=} (\lambda x_1, \ldots, \lambda x_n) \in \mathbb{R}^b.
+\lambda \bar{x} \overset{\text{def}}{=} (\lambda x_1, \ldots, \lambda x_n) \in \mathbb{R}^n.
 $$
 
 The vector addition and scalar multiplication operations satisfy the following properties:
