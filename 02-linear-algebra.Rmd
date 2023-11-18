@@ -190,13 +190,11 @@ M_{m \times n}$ and $\lambda \in \mathbb{R}$.
   For example:
 
   $$
-  A =
   \begin{pmatrix}
     1 & 2 & 3 \\
     4 & 5 & 6
-  \end{pmatrix}
-  \text{, }
-  A' =
+  \end{pmatrix}'
+  =
   \begin{pmatrix}
     1 & 4 \\
     2 & 5 \\
@@ -275,11 +273,69 @@ we consider only square matrices of a given order, instead of general
 rectangular matrices, then matrix multiplication is always defined.
 :::
 
+Examples.
+
+1. Multiplication of $2 \times 2$ matrices is straightforward:
+
+$$
+\begin{pmatrix}
+  3  & 1 \\
+  -1 & 2
+\end{pmatrix}
+\begin{pmatrix}
+  0  & 5 \\
+  -1 & 6
+\end{pmatrix}
+=
+\begin{pmatrix}
+  -1  & 21 \\
+  -2 & 7
+\end{pmatrix}.
+$$
+
+2. Multiplying a matrix of dimension $3 \times 1$ (a $3$-dimensional column
+   vector) by a matrix of dimension $1 \times 3$ (a $3$-dimensional row vector)
+   results in a matrix of dimension $3 \times 3$:
+
+$$
+\begin{pmatrix}
+  3  \\
+  -1 \\
+  2
+\end{pmatrix}
+\begin{pmatrix}
+  2 & -6 & 7
+\end{pmatrix}
+=
+\begin{pmatrix}
+  6  & -18 & 21 \\
+  -2 & 6   & -7 \\
+  4  & -12 & 14
+\end{pmatrix}.
+$$
+
+3. On the other hand, multiplying a matrix of dimension $1 \times 3$ by a matrix
+   of dimension $3 \times 1$ results in a matrix of dimension $1 \times 1$, i.e.
+   a single number:
+
+$$
+\begin{pmatrix}
+  1 & -4 & 5
+\end{pmatrix}
+\begin{pmatrix}
+  3  \\
+  4  \\
+  -1
+\end{pmatrix}
+=
+\begin{pmatrix}
+  -18
+\end{pmatrix}.
+$$
+
 We list a number of properties that matrix multiplication enjoys. Let $A, B, C$
 and $D$ be matrices of the appropriate dimension so that all of the matrix
 products listed below are defined.
-
-Properties.
 
 1. Matrix multiplication is associative
 
@@ -287,7 +343,7 @@ $$
 A(BC) = (AB)C.
 $$
 
-2. Matrix multiplication distributes over matrix addition/subtraction
+2. Matrix multiplication distributes over matrix addition
 
 $$
 \begin{align}
@@ -296,7 +352,7 @@ A(B + C) &= AB + AC, \\
 \end{align}
 $$
 
-3. Matrix multiplication is in general commutative *not*, i.e. $AB \neq BA$. For
+3. Matrix multiplication is in general *not* commutative, i.e. $AB \neq BA$. For
    example
 
 $$
@@ -319,7 +375,7 @@ $$
   0 & 0
 \end{pmatrix}
 }_{AB}
-\text{ but }
+\text{, but }
 \underbrace{
 \begin{pmatrix}
   0 & 0 \\

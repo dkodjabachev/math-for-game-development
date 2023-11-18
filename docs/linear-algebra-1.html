@@ -271,13 +271,11 @@ the flipped subscripts. We can form <span class="math inline">\(A&#39;\)</span> 
 of <span class="math inline">\(A\)</span> as columns of <span class="math inline">\(A&#39;\)</span> or by writing the columns of <span class="math inline">\(A\)</span> as rows of <span class="math inline">\(A&#39;\)</span>.
 For example:</p>
 <p><span class="math display">\[
-A =
 \begin{pmatrix}
   1 &amp; 2 &amp; 3 \\
   4 &amp; 5 &amp; 6
-\end{pmatrix}
-\text{, }
-A&#39; =
+\end{pmatrix}&#39;
+=
 \begin{pmatrix}
   1 &amp; 4 \\
   2 &amp; 5 \\
@@ -347,10 +345,68 @@ columns of the first factor equals the number of rows of the second factor. If
 we consider only square matrices of a given order, instead of general
 rectangular matrices, then matrix multiplication is always defined.</p>
 </div>
+<p>Examples.</p>
+<ol style="list-style-type: decimal">
+<li>Multiplication of <span class="math inline">\(2 \times 2\)</span> matrices is straightforward:</li>
+</ol>
+<p><span class="math display">\[
+\begin{pmatrix}
+  3  &amp; 1 \\
+  -1 &amp; 2
+\end{pmatrix}
+\begin{pmatrix}
+  0  &amp; 5 \\
+  -1 &amp; 6
+\end{pmatrix}
+=
+\begin{pmatrix}
+  -1  &amp; 21 \\
+  -2 &amp; 7
+\end{pmatrix}.
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Multiplying a matrix of dimension <span class="math inline">\(3 \times 1\)</span> (a <span class="math inline">\(3\)</span>-dimensional column
+vector) by a matrix of dimension <span class="math inline">\(1 \times 3\)</span> (a <span class="math inline">\(3\)</span>-dimensional row vector)
+results in a matrix of dimension <span class="math inline">\(3 \times 3\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+\begin{pmatrix}
+  3  \\
+  -1 \\
+  2
+\end{pmatrix}
+\begin{pmatrix}
+  2 &amp; -6 &amp; 7
+\end{pmatrix}
+=
+\begin{pmatrix}
+  6  &amp; -18 &amp; 21 \\
+  -2 &amp; 6   &amp; -7 \\
+  4  &amp; -12 &amp; 14
+\end{pmatrix}.
+\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>On the other hand, multiplying a matrix of dimension <span class="math inline">\(1 \times 3\)</span> by a matrix
+of dimension <span class="math inline">\(3 \times 1\)</span> results in a matrix of dimension <span class="math inline">\(1 \times 1\)</span>, i.e.
+a single number:</li>
+</ol>
+<p><span class="math display">\[
+\begin{pmatrix}
+  1 &amp; -4 &amp; 5
+\end{pmatrix}
+\begin{pmatrix}
+  3  \\
+  4  \\
+  -1
+\end{pmatrix}
+=
+\begin{pmatrix}
+  -18
+\end{pmatrix}.
+\]</span></p>
 <p>We list a number of properties that matrix multiplication enjoys. Let <span class="math inline">\(A, B, C\)</span>
 and <span class="math inline">\(D\)</span> be matrices of the appropriate dimension so that all of the matrix
 products listed below are defined.</p>
-<p>Properties.</p>
 <ol style="list-style-type: decimal">
 <li>Matrix multiplication is associative</li>
 </ol>
@@ -358,7 +414,7 @@ products listed below are defined.</p>
 A(BC) = (AB)C.
 \]</span></p>
 <ol start="2" style="list-style-type: decimal">
-<li>Matrix multiplication distributes over matrix addition/subtraction</li>
+<li>Matrix multiplication distributes over matrix addition</li>
 </ol>
 <p><span class="math display">\[
 \begin{align}
@@ -367,7 +423,7 @@ A(B + C) &amp;= AB + AC, \\
 \end{align}
 \]</span></p>
 <ol start="3" style="list-style-type: decimal">
-<li>Matrix multiplication is in general commutative <em>not</em>, i.e. <span class="math inline">\(AB \neq BA\)</span>. For
+<li>Matrix multiplication is in general <em>not</em> commutative, i.e. <span class="math inline">\(AB \neq BA\)</span>. For
 example</li>
 </ol>
 <p><span class="math display">\[
@@ -390,7 +446,7 @@ example</li>
   0 &amp; 0
 \end{pmatrix}
 }_{AB}
-\text{ but }
+\text{, but }
 \underbrace{
 \begin{pmatrix}
   0 &amp; 0 \\
