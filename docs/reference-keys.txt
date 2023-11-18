@@ -5,6 +5,13 @@ def:unlabeled-div-4
 def:unlabeled-div-6
 thm:unlabeled-div-7
 def:unlabeled-div-9
+def:unlabeled-div-10
+def:unlabeled-div-11
+def:unlabeled-div-12
+def:unlabeled-div-13
+def:unlabeled-div-15
+def:unlabeled-div-16
+lem:unlabeled-div-17
 background-material-1
 set-theory
 basic-definitions
@@ -15,3 +22,5 @@ trigonometric-functions
 trigonometric-identities
 linear-algebra-1
 algebraic-vectors
+matrices-and-matrix-operations
+determinants-and-inverse-matrices

@@ -3,16 +3,24 @@
 ## Algebraic vectors
 
 ::: {.definition}
-An *$n$-dimensional vector* is an $n$-tuple $\bar{x} = (x_1,\ldots,x_n)$, where $x_i \in \mathbb{R}$. The $x_i$ are called the *coordinates* of the vector.
+An *$n$-dimensional vector* is an $n$-tuple of real numbers
+
+$$
+\bar{x} = (x_1,\ldots,x_n),
+$$
+
+The $x_i$ are called the *coordinates* of the vector.  We will denote the
+collection of all $n$-dimensional vectors by $\mathbb{R}^n$, i.e.
+
+$$
+\mathbb{R}^n \overset{\text{def}}{=}
+  \{\bar{x}=(x_1,\ldots,x_n) | x_i \in \mathbb{R} \}.
+$$
 :::
 
-We will denote the collection of all $n$-dimensional vectors by $\mathbb{R}^n$, i.e.
-
-$$
-\mathbb{R}^n \overset{\text{def}}{=} \{\bar{x}=(x_1,\ldots,x_n) | x_i \in \mathbb{R} \}.
-$$
-
-This agrees with the already introduced notation for the Cartesian product of sets, i.e. $\mathbb{R}^n$ is nothing more than the $n$-fold Cartesian product of $\mathbb{R}$ with itself
+This agrees with the already introduced notation for the Cartesian product of
+sets, i.e. $\mathbb{R}^n$ is nothing more than the $n$-fold Cartesian product of
+$\mathbb{R}$ with itself
 
 $$
 \mathbb{R}^n = \mathbb{R} \times \mathbb{R} \times \cdots \times \mathbb{R}.
@@ -20,37 +28,374 @@ $$
 
 A priori this is just a set. We can equip it the following two operations:
 
-1. *Addition of vectors*: given two vectors $\bar{x},\bar{y} \in \mathbb{R}^n$ we define their sum to be the vector
+- *Addition of vectors*: given two vectors $\bar{x},\bar{y} \in \mathbb{R}^n$ we
+  define their sum to be the vector
 
 $$
-\bar{x} + \bar{y} \overset{\text{def}}{=} (x_1 + y_1, \ldots, x_n + y_n) \in \mathbb{R}^n.
+\bar{x} + \bar{y} \overset{\text{def}}{=}
+  (x_1 + y_1, \ldots, x_n + y_n) \in \mathbb{R}^n.
 $$
 
-2. *Scalar multiplication*: given a vector $\bar{x} \in \mathbb{R}^n$ and a real number $\lambda \in \mathbb{R}$ (also referred to as a *scalar*) we define the scalar multiplication of $\bar{x}$ by $\lambda$ to be the vector
+- *Scalar multiplication*: given a vector $\bar{x} \in \mathbb{R}^n$ and a real
+  number $\lambda \in \mathbb{R}$ (also referred to as a *scalar*) we define the
+  scalar multiplication of $\bar{x}$ by $\lambda$ to be the vector
 
 $$
-\lambda \bar{x} \overset{\text{def}}{=} (\lambda x_1, \ldots, \lambda x_n) \in \mathbb{R}^n.
+\lambda \bar{x} \overset{\text{def}}{=}
+  (\lambda x_1, \ldots, \lambda x_n) \in \mathbb{R}^n.
 $$
 
-The vector addition and scalar multiplication operations satisfy the following properties:
+The vector addition and scalar multiplication operations satisfy the following
+properties:
 
-1. Vector addition is associative: $\bar{x} + (\bar{y} + \bar{z}) = (\bar{x} + \bar{y}) + \bar{z}$.
+1. Vector addition is associative: $\bar{x} + (\bar{y} + \bar{z}) = (\bar{x} +
+   \bar{y}) + \bar{z}$.
 2. Vector addition is also commutative: $\bar{x} + \bar{y} = \bar{y} + \bar{x}$.
-3. There exists a special vector $\bar{0}$, called the *zero vector*, such that $\bar{0} + \bar{x} = \bar{x} + \bar{0} = \bar{x}$.
-4. There exists an *inverse* vector $-\bar{x}$, such that $\bar{x} + (-\bar{x}) = \bar{0}$.
-5. Scalar multiplication distributes over vector addition: $\lambda (\bar{x} + \bar{y}) = \lambda \bar{x} + \lambda \bar{y}$.
-6. Scalar multiplication distributes over addition of real numbers: $(\lambda + \gamma) \bar{x} = \lambda \bar{x} + \gamma \bar{x}$.
-7. Scalar multiplication is compatible with multiplication of real numbers: $\lambda (\gamma \bar{x}) = (\lambda \gamma) \bar{x}$.
+3. There exists a special vector $\bar{0}$, called the *zero vector*, such that
+   $\bar{0} + \bar{x} = \bar{x} + \bar{0} = \bar{x}$.
+4. There exists an *inverse* vector $-\bar{x}$, such that $\bar{x} + (-\bar{x})
+   = \bar{0}$.
+5. Scalar multiplication distributes over vector addition: $\lambda (\bar{x} +
+   \bar{y}) = \lambda \bar{x} + \lambda \bar{y}$.
+6. Scalar multiplication distributes over addition of real numbers: $(\lambda +
+   \gamma) \bar{x} = \lambda \bar{x} + \gamma \bar{x}$.
+7. Scalar multiplication is compatible with multiplication of real numbers:
+   $\lambda (\gamma \bar{x}) = (\lambda \gamma) \bar{x}$.
 
-$\mathbb{R}^n$ together with the operations of vector addition and scalar multiplication is called an *$n$-dimensional real vector space*.
+$\mathbb{R}^n$ together with the operations of vector addition and scalar
+multiplication is called an *$n$-dimensional real vector space*.
 
-<!--
+There is another operation on vectors which will be of interest to us. It is a
+binary operation which takes two $n$-dimensional real vectors and produces a
+real number as a result.  
+
 ::: {.definition}
-A collection of vectors $\bar{x}_1,\ldots,\bar{x}_n$ is said to be *linearly dependent* if there exist real numbers $\lambda_i$ for $i = 1,\ldots,n$ with at least one $\lambda_i \neq 0$ such that
+The *scalar product*, also called *dot product*, of two $n$-dimensional vectors
+$\bar{x}, \bar{y} \in \mathbb{R}^n$ is defined as
+
+$$
+\bar{x} \cdot \bar{y} \overset{\text{def}}{=}
+  x_1 y_1 + x_2 y_2 + \cdots + x_n y_n = \sum^n_{i = 1} x_i y_i.
+$$
+:::
+
+::: {.definition}
+A collection of vectors $\bar{x}_1,\ldots,\bar{x}_n$ is said to be *linearly
+dependent* if there exist real numbers $\lambda_i$ for $i = 1,\ldots,n$ with at
+least one $\lambda_i \neq 0$ such that
 
 $$
   \lambda_1 \bar{x}_1 + \cdots + \lambda_n \bar{x}_n = 0.
 $$
-Otherwise, if the above equation is satisfied only if $\lambda_i = 0$ for $i = 1,\ldots,n$ we say that the vectors $\bar{x}_1,\ldots,\bar{x}_n$ area *linearly independent*. 
+
+Otherwise, if the above equation is satisfied only if $\lambda_i = 0$ for $i =
+1,\ldots,n$ we say that the vectors $\bar{x}_1,\ldots,\bar{x}_n$ area *linearly
+independent*. 
 :::
--->
+
+## Matrices and matrix operations
+
+::: {.definition}
+Let $m$ and $n$ be positive natural numbers. A *matrix of dimension $m \times
+n$* is a rectangular table of real numbers arranged in $m$ rows and $n$ columns
+
+$$
+A =
+\begin{pmatrix}
+  a_{11} & a_{12} & \cdots & a_{1n} \\
+  a_{21} & a_{22} & \cdots & a_{2n} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}.
+$$
+
+The numbers $a_{ij}$ are called *elements* of the matrix and the subscripts
+indicate the row and column where the respective element is found in the matrix,
+i.e. $a_{ij}$ is in the $i$-th row and $j$-th column. If $A$ is a matrix we will
+also write $A_{ij}$ for the element $a_{ij}$. If $m = n$ we say that $A$ is a
+*square matrix of order $n$*. The diagonal starting from the top left corner of
+the matrix and running towards the bottom right is referred to as the *main
+diagonal*; it consists of all the elements $a_{ii}$. We will denote the set of
+all $m \times n$ matrices by $M_{m \times n}$.
+:::
+
+Examples.
+
+1. A matrix of dimension $1 \times 1$ is just a real number.
+2. A matrix of dimension $n \times 1$ can be identified with an $n$-dimension
+   vector.
+3. The zero matrix of any dimension is the matrix whose elements are all $0$.
+   Abusing notation, we will denote the zero matrix also by the symbol $0$.
+4. The identity matrix $I$ of order $n$ is a square matrix of order $n$ with
+   ones on the so called main diagonal and zeros everywhere else, i.e.
+
+$$
+I =
+\begin{pmatrix}
+  1      & 0      & \cdots & 0      \\
+  0      & 1      & \cdots & 0      \\
+  \vdots & \vdots & \ddots & \vdots \\
+  0      & 0      & \cdots & 1
+\end{pmatrix}.
+$$
+
+5. A triangular matrix is a square matrix for which all entries either above or
+   below the main diagonal are zero, i.e. a matrix of the form
+
+$$
+A =
+\begin{pmatrix}
+  a_{11} & 0      & \cdots & 0      \\
+  a_{21} & a_{22} & \cdots & 0      \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{pmatrix}
+\text{ or }
+B =
+\begin{pmatrix}
+  b_{11} & b_{12} & \cdots & b_{1n} \\
+  b_{21} & b_{22} & \cdots & b_{2n}  \\
+  \vdots & \vdots & \ddots & \vdots \\
+  0      & 0      & \cdots & b_{nn}
+\end{pmatrix}
+$$
+
+There are a number of operations that we can define on matrices. Let $A,B \in
+M_{m \times n}$ and $\lambda \in \mathbb{R}$.
+
+- We can add and subtract matrices of the same dimension by adding or
+  subtracting their corresponding elements. For example, the *sum* (or
+  *difference*) of $A$ and $B$ is a new matrix of the same dimension as both $A$
+  and $B$ with elements given by
+
+  $$
+  (A \pm B)_{ij} = a_{ij} \pm b_{ij}.
+  $$
+
+- We can multiply a matrix $A$ by number $\lambda$. This is known as the *scalar
+  multiplication* of $\lambda$ and $A$ is a new matrix denoted $\lambda A$, of
+  the same dimension as $A$, whose elements are given by
+
+  $$
+  (\lambda A)_{ij} = \lambda a_{ij}.
+  $$
+
+- The *opposite* of a matrix $A$ is the matrix $-A = (-1)A$ with elements
+  $(-A)_{ij} = -a_{ij}$. Clearly, $A + (-A) = 0$.
+
+- The *transpose* of a matrix $A$ is a new matrix denoted by $A'$ obtained by
+  reflecting $A$ along its main diagonal. Formally, $(A')_{ij} = A_{ji}$, note
+  the flipped subscripts. We can form $A'$ from $A$ by either writing the rows
+  of $A$ as columns of $A'$ or by writing the columns of $A$ as rows of $A'$.
+  For example:
+
+  $$
+  A =
+  \begin{pmatrix}
+  1 & 2 & 3 \\
+  4 & 5 & 6
+  \end{pmatrix}
+  \text{, }
+  A' =
+  \begin{pmatrix}
+  1 & 4 \\
+  2 & 5 \\
+  3 & 6
+  \end{pmatrix}.
+  $$
+
+  Forming the transpose of a matrix is an example of an *involution* -- an
+  operation which when applied twice produces the original matrix $(A')' = A$.
+
+- The *trace* of a square matrix $A$ is the sum of the elements along its main
+  diagonal, i.e.
+
+  $$
+  \operatorname{tr}(A) \overset{\text{def}}{=}
+    \sum_{i = 1}^n a_{ii} = a_{11} + a_{22} + \cdots + a_{nn}.
+  $$
+
+We can also multiply two matrices if their dimensions match in the sense that
+the number of columns of the first matrix must equal the number of rows of the
+second matrix.
+
+::: {.definition}
+Let $A \in M_{m \times n}$ and $B \in M_{n \times s}$ be two matrices. Their
+*matrix product* $C = AB$ is a matrix of dimension $m \times s$. An arbitrary
+element $c_{ij}$ of the product is formed as follows: we take the $i$-th row of
+$A$, which consists of $n$ elements, and the $j$-th row of $B$, which also
+consists of $n$ elements, we multiply them term-by-term and we sum the resulting
+$n$ products. Formally
+
+$$
+\underbrace{
+  \begin{pmatrix}
+   c_{11} & \cdots & c_{1s} \\
+   c_{21} & \cdots & c_{2s} \\
+   \vdots & \color{blue}{c_{ij}} & \vdots \\
+   c_{m1} & \cdots & c_{ms}
+\end{pmatrix}
+}_{C}
+=
+\underbrace{
+  \begin{pmatrix}
+   a_{11}              & \cdots              & a_{1n}              \\
+   \vdots              & \ddots              & \vdots              \\
+   \color{red}{a_{i1}} & \color{red}{\cdots} & \color{red}{a_{in}} \\
+   \vdots              & \ddots              & \vdots              \\
+   a_{m1}              & \cdots              & a_{mn}
+  \end{pmatrix}
+}_{A}
+\underbrace{
+  \begin{pmatrix}
+   b_{11} & \cdots & \color{green}{b_{1j}} & \cdots & b_{1s} \\
+   b_{21} & \cdots & \color{green}{b_{2j}} & \cdots & b_{2s} \\
+   \vdots & \ddots & \color{green}{\vdots} & \ddots & \vdots \\
+   b_{n1} & \cdots & \color{green}{b_{nj}} & \cdots & b_{ns}
+  \end{pmatrix}
+}_{B},
+$$
+
+where
+
+$$
+\color{blue}{c_{ij}} =
+  \sum_{k = 1}^{n} \color{red}{a_{ik}}\color{green}{b_{kj}} =
+    \color{red}{a_{i1}}\color{green}{b_{1j}} +
+      \color{red}{a_{i2}}\color{green}{b_{2j}} +
+        \cdots +
+          \color{red}{a_{in}}\color{green}{b_{nj}}.
+$$
+
+:::
+
+::: {.remark}
+As noted above, matrix multiplication is not defined unless the number of
+columns of the first factor equals the number of rows of the second factor. If
+we consider only square matrices of a given order, instead of general
+rectangular matrices, then matrix multiplication is always defined.
+:::
+
+We list a number of properties that matrix multiplication enjoys. Let $A, B, C$
+and $D$ be matrices of the appropriate dimension so that all of the matrix
+products listed below are defined.
+
+Properties.
+
+1. Matrix multiplication is associative
+
+$$
+A(BC) = (AB)C.
+$$
+
+2. Matrix multiplication distributes over matrix addition/subtraction
+
+$$
+\begin{align}
+A(B + C) &= AB + AC, \\
+(B + C)D &= BD + CD.
+\end{align}
+$$
+
+3. Matrix multiplication is in general commutative *not*, i.e. $AB \neq BA$. For
+   example
+
+$$
+\underbrace{
+\begin{pmatrix}
+0 & 1 \\
+0 & 0
+\end{pmatrix}
+}_{A}
+\underbrace{
+\begin{pmatrix}
+0 & 0 \\
+1 & 0
+\end{pmatrix}
+}_{B}
+=
+\underbrace{
+\begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix}
+}_{AB}
+\text{ but }
+\underbrace{
+\begin{pmatrix}
+0 & 0 \\
+1 & 0
+\end{pmatrix}
+}_{B}
+\underbrace{
+\begin{pmatrix}
+0 & 1 \\
+0 & 0
+\end{pmatrix}
+}_{A}
+=
+\underbrace{
+\begin{pmatrix}
+0 & 0 \\
+0 & 1
+\end{pmatrix}
+}_{BA}.
+$$
+
+## Determinants and inverse matrices
+
+::: {.definition}
+The *determinant* of a square matrix of order $n$ is the unique function $\det
+\colon M_{n \times n} \to \mathbb{R}$ such that:
+
+1. $\det(I) = 1$.
+2. The determinant of a matrix with two identical rows or two identical columns
+   is $0$.
+3. The determinant is a multilinear function...
+:::
+
+For square matrices of order $2$ and $3$ there are straightforward formulas for
+computing the determinant.
+
+- Given any square matrix $A$ of order $2$, its determinant can be calculated
+  using the formula:
+
+$$
+\det
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+= ad - bc.
+$$
+
+- For square matrices of order $3$ the formula is a bit more involved:
+
+$$
+\det
+\begin{pmatrix}
+a & b & c \\
+d & e & f \\
+g & h & i
+\end{pmatrix}
+= aei + bfg + cdh - ceg - bdi - afh.
+$$
+
+::: {.definition}
+A square matrix $A \in M_{n \times n}$ is called *invertible* if there exists a
+square matrix $A^{-1}$ such that
+
+$$
+AA^{-1} = A^{-1}A = I.
+$$
+
+If it exists, the matrix $A^{-1}$ is unique and is called the *inverse* of $A$.
+A square matrix which is not invertible is called *singular* or *degenerate*. 
+:::
+
+One of the many uses of determinants is illustrated by the following claim.
+
+::: {.lemma}
+A square matrix $A \in M_{n \times n}$ is invertible if and only if $\det(A)
+\neq 0$.
+:::

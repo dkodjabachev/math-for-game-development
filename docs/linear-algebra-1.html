@@ -89,6 +89,8 @@
 <li class="chapter" data-level="2" data-path="linear-algebra-1.html"><a href="linear-algebra-1.html"><i class="fa fa-check"></i><b>2</b> Linear algebra</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="linear-algebra-1.html"><a href="linear-algebra-1.html#algebraic-vectors"><i class="fa fa-check"></i><b>2.1</b> Algebraic vectors</a></li>
+<li class="chapter" data-level="2.2" data-path="linear-algebra-1.html"><a href="linear-algebra-1.html#matrices-and-matrix-operations"><i class="fa fa-check"></i><b>2.2</b> Matrices and matrix operations</a></li>
+<li class="chapter" data-level="2.3" data-path="linear-algebra-1.html"><a href="linear-algebra-1.html#determinants-and-inverse-matrices"><i class="fa fa-check"></i><b>2.3</b> Determinants and inverse matrices</a></li>
 </ul></li>
 </ul>
 
@@ -112,50 +114,354 @@
 <div id="algebraic-vectors" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Algebraic vectors<a href="linear-algebra-1.html#algebraic-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-9" class="definition"><strong>Definition 2.1  </strong></span>An <em><span class="math inline">\(n\)</span>-dimensional vector</em> is an <span class="math inline">\(n\)</span>-tuple <span class="math inline">\(\bar{x} = (x_1,\ldots,x_n)\)</span>, where <span class="math inline">\(x_i \in \mathbb{R}\)</span>. The <span class="math inline">\(x_i\)</span> are called the <em>coordinates</em> of the vector.</p>
-</div>
-<p>We will denote the collection of all <span class="math inline">\(n\)</span>-dimensional vectors by <span class="math inline">\(\mathbb{R}^n\)</span>, i.e.</p>
+<p><span id="def:unlabeled-div-9" class="definition"><strong>Definition 2.1  </strong></span>An <em><span class="math inline">\(n\)</span>-dimensional vector</em> is an <span class="math inline">\(n\)</span>-tuple of real numbers</p>
 <p><span class="math display">\[
-\mathbb{R}^n \overset{\text{def}}{=} \{\bar{x}=(x_1,\ldots,x_n) | x_i \in \mathbb{R} \}.
+\bar{x} = (x_1,\ldots,x_n),
 \]</span></p>
-<p>This agrees with the already introduced notation for the Cartesian product of sets, i.e. <span class="math inline">\(\mathbb{R}^n\)</span> is nothing more than the <span class="math inline">\(n\)</span>-fold Cartesian product of <span class="math inline">\(\mathbb{R}\)</span> with itself</p>
+<p>The <span class="math inline">\(x_i\)</span> are called the <em>coordinates</em> of the vector. We will denote the
+collection of all <span class="math inline">\(n\)</span>-dimensional vectors by <span class="math inline">\(\mathbb{R}^n\)</span>, i.e.</p>
+<p><span class="math display">\[
+\mathbb{R}^n \overset{\text{def}}{=}
+  \{\bar{x}=(x_1,\ldots,x_n) | x_i \in \mathbb{R} \}.
+\]</span></p>
+</div>
+<p>This agrees with the already introduced notation for the Cartesian product of
+sets, i.e. <span class="math inline">\(\mathbb{R}^n\)</span> is nothing more than the <span class="math inline">\(n\)</span>-fold Cartesian product of
+<span class="math inline">\(\mathbb{R}\)</span> with itself</p>
 <p><span class="math display">\[
 \mathbb{R}^n = \mathbb{R} \times \mathbb{R} \times \cdots \times \mathbb{R}.
 \]</span></p>
 <p>A priori this is just a set. We can equip it the following two operations:</p>
-<ol style="list-style-type: decimal">
-<li><em>Addition of vectors</em>: given two vectors <span class="math inline">\(\bar{x},\bar{y} \in \mathbb{R}^n\)</span> we define their sum to be the vector</li>
-</ol>
+<ul>
+<li><em>Addition of vectors</em>: given two vectors <span class="math inline">\(\bar{x},\bar{y} \in \mathbb{R}^n\)</span> we
+define their sum to be the vector</li>
+</ul>
 <p><span class="math display">\[
-\bar{x} + \bar{y} \overset{\text{def}}{=} (x_1 + y_1, \ldots, x_n + y_n) \in \mathbb{R}^n.
+\bar{x} + \bar{y} \overset{\text{def}}{=}
+  (x_1 + y_1, \ldots, x_n + y_n) \in \mathbb{R}^n.
 \]</span></p>
-<ol start="2" style="list-style-type: decimal">
-<li><em>Scalar multiplication</em>: given a vector <span class="math inline">\(\bar{x} \in \mathbb{R}^n\)</span> and a real number <span class="math inline">\(\lambda \in \mathbb{R}\)</span> (also referred to as a <em>scalar</em>) we define the scalar multiplication of <span class="math inline">\(\bar{x}\)</span> by <span class="math inline">\(\lambda\)</span> to be the vector</li>
-</ol>
+<ul>
+<li><em>Scalar multiplication</em>: given a vector <span class="math inline">\(\bar{x} \in \mathbb{R}^n\)</span> and a real
+number <span class="math inline">\(\lambda \in \mathbb{R}\)</span> (also referred to as a <em>scalar</em>) we define the
+scalar multiplication of <span class="math inline">\(\bar{x}\)</span> by <span class="math inline">\(\lambda\)</span> to be the vector</li>
+</ul>
 <p><span class="math display">\[
-\lambda \bar{x} \overset{\text{def}}{=} (\lambda x_1, \ldots, \lambda x_n) \in \mathbb{R}^n.
+\lambda \bar{x} \overset{\text{def}}{=}
+  (\lambda x_1, \ldots, \lambda x_n) \in \mathbb{R}^n.
 \]</span></p>
-<p>The vector addition and scalar multiplication operations satisfy the following properties:</p>
+<p>The vector addition and scalar multiplication operations satisfy the following
+properties:</p>
 <ol style="list-style-type: decimal">
 <li>Vector addition is associative: <span class="math inline">\(\bar{x} + (\bar{y} + \bar{z}) = (\bar{x} + \bar{y}) + \bar{z}\)</span>.</li>
 <li>Vector addition is also commutative: <span class="math inline">\(\bar{x} + \bar{y} = \bar{y} + \bar{x}\)</span>.</li>
-<li>There exists a special vector <span class="math inline">\(\bar{0}\)</span>, called the <em>zero vector</em>, such that <span class="math inline">\(\bar{0} + \bar{x} = \bar{x} + \bar{0} = \bar{x}\)</span>.</li>
+<li>There exists a special vector <span class="math inline">\(\bar{0}\)</span>, called the <em>zero vector</em>, such that
+<span class="math inline">\(\bar{0} + \bar{x} = \bar{x} + \bar{0} = \bar{x}\)</span>.</li>
 <li>There exists an <em>inverse</em> vector <span class="math inline">\(-\bar{x}\)</span>, such that <span class="math inline">\(\bar{x} + (-\bar{x}) = \bar{0}\)</span>.</li>
 <li>Scalar multiplication distributes over vector addition: <span class="math inline">\(\lambda (\bar{x} + \bar{y}) = \lambda \bar{x} + \lambda \bar{y}\)</span>.</li>
 <li>Scalar multiplication distributes over addition of real numbers: <span class="math inline">\((\lambda + \gamma) \bar{x} = \lambda \bar{x} + \gamma \bar{x}\)</span>.</li>
-<li>Scalar multiplication is compatible with multiplication of real numbers: <span class="math inline">\(\lambda (\gamma \bar{x}) = (\lambda \gamma) \bar{x}\)</span>.</li>
+<li>Scalar multiplication is compatible with multiplication of real numbers:
+<span class="math inline">\(\lambda (\gamma \bar{x}) = (\lambda \gamma) \bar{x}\)</span>.</li>
 </ol>
-<p><span class="math inline">\(\mathbb{R}^n\)</span> together with the operations of vector addition and scalar multiplication is called an <em><span class="math inline">\(n\)</span>-dimensional real vector space</em>.</p>
-<!--
-::: {.definition}
-A collection of vectors $\bar{x}_1,\ldots,\bar{x}_n$ is said to be *linearly dependent* if there exist real numbers $\lambda_i$ for $i = 1,\ldots,n$ with at least one $\lambda_i \neq 0$ such that
-
-$$
+<p><span class="math inline">\(\mathbb{R}^n\)</span> together with the operations of vector addition and scalar
+multiplication is called an <em><span class="math inline">\(n\)</span>-dimensional real vector space</em>.</p>
+<p>There is another operation on vectors which will be of interest to us. It is a
+binary operation which takes two <span class="math inline">\(n\)</span>-dimensional real vectors and produces a
+real number as a result.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-10" class="definition"><strong>Definition 2.2  </strong></span>The <em>scalar product</em>, also called <em>dot product</em>, of two <span class="math inline">\(n\)</span>-dimensional vectors
+<span class="math inline">\(\bar{x}, \bar{y} \in \mathbb{R}^n\)</span> is defined as</p>
+<p><span class="math display">\[
+\bar{x} \cdot \bar{y} \overset{\text{def}}{=}
+  x_1 y_1 + x_2 y_2 + \cdots + x_n y_n = \sum^n_{i = 1} x_i y_i.
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-11" class="definition"><strong>Definition 2.3  </strong></span>A collection of vectors <span class="math inline">\(\bar{x}_1,\ldots,\bar{x}_n\)</span> is said to be <em>linearly
+dependent</em> if there exist real numbers <span class="math inline">\(\lambda_i\)</span> for <span class="math inline">\(i = 1,\ldots,n\)</span> with at
+least one <span class="math inline">\(\lambda_i \neq 0\)</span> such that</p>
+<p><span class="math display">\[
   \lambda_1 \bar{x}_1 + \cdots + \lambda_n \bar{x}_n = 0.
-$$
-Otherwise, if the above equation is satisfied only if $\lambda_i = 0$ for $i = 1,\ldots,n$ we say that the vectors $\bar{x}_1,\ldots,\bar{x}_n$ area *linearly independent*. 
-:::
--->
+\]</span></p>
+<p>Otherwise, if the above equation is satisfied only if <span class="math inline">\(\lambda_i = 0\)</span> for <span class="math inline">\(i = 1,\ldots,n\)</span> we say that the vectors <span class="math inline">\(\bar{x}_1,\ldots,\bar{x}_n\)</span> area <em>linearly
+independent</em>.</p>
+</div>
+</div>
+<div id="matrices-and-matrix-operations" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Matrices and matrix operations<a href="linear-algebra-1.html#matrices-and-matrix-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-12" class="definition"><strong>Definition 2.4  </strong></span>Let <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> be positive natural numbers. A <em>matrix of dimension <span class="math inline">\(m \times n\)</span></em> is a rectangular table of real numbers arranged in <span class="math inline">\(m\)</span> rows and <span class="math inline">\(n\)</span> columns</p>
+<p><span class="math display">\[
+A =
+\begin{pmatrix}
+  a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+  a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
+\end{pmatrix}.
+\]</span></p>
+<p>The numbers <span class="math inline">\(a_{ij}\)</span> are called <em>elements</em> of the matrix and the subscripts
+indicate the row and column where the respective element is found in the matrix,
+i.e. <span class="math inline">\(a_{ij}\)</span> is in the <span class="math inline">\(i\)</span>-th row and <span class="math inline">\(j\)</span>-th column. If <span class="math inline">\(A\)</span> is a matrix we will
+also write <span class="math inline">\(A_{ij}\)</span> for the element <span class="math inline">\(a_{ij}\)</span>. If <span class="math inline">\(m = n\)</span> we say that <span class="math inline">\(A\)</span> is a
+<em>square matrix of order <span class="math inline">\(n\)</span></em>. The diagonal starting from the top left corner of
+the matrix and running towards the bottom right is referred to as the <em>main
+diagonal</em>; it consists of all the elements <span class="math inline">\(a_{ii}\)</span>. We will denote the set of
+all <span class="math inline">\(m \times n\)</span> matrices by <span class="math inline">\(M_{m \times n}\)</span>.</p>
+</div>
+<p>Examples.</p>
+<ol style="list-style-type: decimal">
+<li>A matrix of dimension <span class="math inline">\(1 \times 1\)</span> is just a real number.</li>
+<li>A matrix of dimension <span class="math inline">\(n \times 1\)</span> can be identified with an <span class="math inline">\(n\)</span>-dimension
+vector.</li>
+<li>The zero matrix of any dimension is the matrix whose elements are all <span class="math inline">\(0\)</span>.
+Abusing notation, we will denote the zero matrix also by the symbol <span class="math inline">\(0\)</span>.</li>
+<li>The identity matrix <span class="math inline">\(I\)</span> of order <span class="math inline">\(n\)</span> is a square matrix of order <span class="math inline">\(n\)</span> with
+ones on the so called main diagonal and zeros everywhere else, i.e.</li>
+</ol>
+<p><span class="math display">\[
+I =
+\begin{pmatrix}
+  1      &amp; 0      &amp; \cdots &amp; 0      \\
+  0      &amp; 1      &amp; \cdots &amp; 0      \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  0      &amp; 0      &amp; \cdots &amp; 1
+\end{pmatrix}.
+\]</span></p>
+<ol start="5" style="list-style-type: decimal">
+<li>A triangular matrix is a square matrix for which all entries either above or
+below the main diagonal are zero, i.e. a matrix of the form</li>
+</ol>
+<p><span class="math display">\[
+A =
+\begin{pmatrix}
+  a_{11} &amp; 0      &amp; \cdots &amp; 0      \\
+  a_{21} &amp; a_{22} &amp; \cdots &amp; 0      \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}
+\end{pmatrix}
+\text{ or }
+B =
+\begin{pmatrix}
+  b_{11} &amp; b_{12} &amp; \cdots &amp; b_{1n} \\
+  b_{21} &amp; b_{22} &amp; \cdots &amp; b_{2n}  \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  0      &amp; 0      &amp; \cdots &amp; b_{nn}
+\end{pmatrix}
+\]</span></p>
+<p>There are a number of operations that we can define on matrices. Let <span class="math inline">\(A,B \in M_{m \times n}\)</span> and <span class="math inline">\(\lambda \in \mathbb{R}\)</span>.</p>
+<ul>
+<li><p>We can add and subtract matrices of the same dimension by adding or
+subtracting their corresponding elements. For example, the <em>sum</em> (or
+<em>difference</em>) of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is a new matrix of the same dimension as both <span class="math inline">\(A\)</span>
+and <span class="math inline">\(B\)</span> with elements given by</p>
+<p><span class="math display">\[
+(A \pm B)_{ij} = a_{ij} \pm b_{ij}.
+\]</span></p></li>
+<li><p>We can multiply a matrix <span class="math inline">\(A\)</span> by number <span class="math inline">\(\lambda\)</span>. This is known as the <em>scalar
+multiplication</em> of <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(A\)</span> is a new matrix denoted <span class="math inline">\(\lambda A\)</span>, of
+the same dimension as <span class="math inline">\(A\)</span>, whose elements are given by</p>
+<p><span class="math display">\[
+(\lambda A)_{ij} = \lambda a_{ij}.
+\]</span></p></li>
+<li><p>The <em>opposite</em> of a matrix <span class="math inline">\(A\)</span> is the matrix <span class="math inline">\(-A = (-1)A\)</span> with elements
+<span class="math inline">\((-A)_{ij} = -a_{ij}\)</span>. Clearly, <span class="math inline">\(A + (-A) = 0\)</span>.</p></li>
+<li><p>The <em>transpose</em> of a matrix <span class="math inline">\(A\)</span> is a new matrix denoted by <span class="math inline">\(A&#39;\)</span> obtained by
+reflecting <span class="math inline">\(A\)</span> along its main diagonal. Formally, <span class="math inline">\((A&#39;)_{ij} = A_{ji}\)</span>, note
+the flipped subscripts. We can form <span class="math inline">\(A&#39;\)</span> from <span class="math inline">\(A\)</span> by either writing the rows
+of <span class="math inline">\(A\)</span> as columns of <span class="math inline">\(A&#39;\)</span> or by writing the columns of <span class="math inline">\(A\)</span> as rows of <span class="math inline">\(A&#39;\)</span>.
+For example:</p>
+<p><span class="math display">\[
+A =
+\begin{pmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6
+\end{pmatrix}
+\text{, }
+A&#39; =
+\begin{pmatrix}
+1 &amp; 4 \\
+2 &amp; 5 \\
+3 &amp; 6
+\end{pmatrix}.
+\]</span></p>
+<p>Forming the transpose of a matrix is an example of an <em>involution</em> – an
+operation which when applied twice produces the original matrix <span class="math inline">\((A&#39;)&#39; = A\)</span>.</p></li>
+<li><p>The <em>trace</em> of a square matrix <span class="math inline">\(A\)</span> is the sum of the elements along its main
+diagonal, i.e.</p>
+<p><span class="math display">\[
+\operatorname{tr}(A) \overset{\text{def}}{=}
+  \sum_{i = 1}^n a_{ii} = a_{11} + a_{22} + \cdots + a_{nn}.
+\]</span></p></li>
+</ul>
+<p>We can also multiply two matrices if their dimensions match in the sense that
+the number of columns of the first matrix must equal the number of rows of the
+second matrix.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-13" class="definition"><strong>Definition 2.5  </strong></span>Let <span class="math inline">\(A \in M_{m \times n}\)</span> and <span class="math inline">\(B \in M_{n \times s}\)</span> be two matrices. Their
+<em>matrix product</em> <span class="math inline">\(C = AB\)</span> is a matrix of dimension <span class="math inline">\(m \times s\)</span>. An arbitrary
+element <span class="math inline">\(c_{ij}\)</span> of the product is formed as follows: we take the <span class="math inline">\(i\)</span>-th row of
+<span class="math inline">\(A\)</span>, which consists of <span class="math inline">\(n\)</span> elements, and the <span class="math inline">\(j\)</span>-th row of <span class="math inline">\(B\)</span>, which also
+consists of <span class="math inline">\(n\)</span> elements, we multiply them term-by-term and we sum the resulting
+<span class="math inline">\(n\)</span> products. Formally</p>
+<p><span class="math display">\[
+\underbrace{
+  \begin{pmatrix}
+   c_{11} &amp; \cdots &amp; c_{1s} \\
+   c_{21} &amp; \cdots &amp; c_{2s} \\
+   \vdots &amp; \color{blue}{c_{ij}} &amp; \vdots \\
+   c_{m1} &amp; \cdots &amp; c_{ms}
+\end{pmatrix}
+}_{C}
+=
+\underbrace{
+  \begin{pmatrix}
+   a_{11}              &amp; \cdots              &amp; a_{1n}              \\
+   \vdots              &amp; \ddots              &amp; \vdots              \\
+   \color{red}{a_{i1}} &amp; \color{red}{\cdots} &amp; \color{red}{a_{in}} \\
+   \vdots              &amp; \ddots              &amp; \vdots              \\
+   a_{m1}              &amp; \cdots              &amp; a_{mn}
+  \end{pmatrix}
+}_{A}
+\underbrace{
+  \begin{pmatrix}
+   b_{11} &amp; \cdots &amp; \color{green}{b_{1j}} &amp; \cdots &amp; b_{1s} \\
+   b_{21} &amp; \cdots &amp; \color{green}{b_{2j}} &amp; \cdots &amp; b_{2s} \\
+   \vdots &amp; \ddots &amp; \color{green}{\vdots} &amp; \ddots &amp; \vdots \\
+   b_{n1} &amp; \cdots &amp; \color{green}{b_{nj}} &amp; \cdots &amp; b_{ns}
+  \end{pmatrix}
+}_{B},
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+\color{blue}{c_{ij}} =
+  \sum_{k = 1}^{n} \color{red}{a_{ik}}\color{green}{b_{kj}} =
+    \color{red}{a_{i1}}\color{green}{b_{1j}} +
+      \color{red}{a_{i2}}\color{green}{b_{2j}} +
+        \cdots +
+          \color{red}{a_{in}}\color{green}{b_{nj}}.
+\]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-14" class="remark"><em>Remark</em>. </span>As noted above, matrix multiplication is not defined unless the number of
+columns of the first factor equals the number of rows of the second factor. If
+we consider only square matrices of a given order, instead of general
+rectangular matrices, then matrix multiplication is always defined.</p>
+</div>
+<p>We list a number of properties that matrix multiplication enjoys. Let <span class="math inline">\(A, B, C\)</span>
+and <span class="math inline">\(D\)</span> be matrices of the appropriate dimension so that all of the matrix
+products listed below are defined.</p>
+<p>Properties.</p>
+<ol style="list-style-type: decimal">
+<li>Matrix multiplication is associative</li>
+</ol>
+<p><span class="math display">\[
+A(BC) = (AB)C.
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Matrix multiplication distributes over matrix addition/subtraction</li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+A(B + C) &amp;= AB + AC, \\
+(B + C)D &amp;= BD + CD.
+\end{align}
+\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Matrix multiplication is in general commutative <em>not</em>, i.e. <span class="math inline">\(AB \neq BA\)</span>. For
+example</li>
+</ol>
+<p><span class="math display">\[
+\underbrace{
+\begin{pmatrix}
+0 &amp; 1 \\
+0 &amp; 0
+\end{pmatrix}
+}_{A}
+\underbrace{
+\begin{pmatrix}
+0 &amp; 0 \\
+1 &amp; 0
+\end{pmatrix}
+}_{B}
+=
+\underbrace{
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 0
+\end{pmatrix}
+}_{AB}
+\text{ but }
+\underbrace{
+\begin{pmatrix}
+0 &amp; 0 \\
+1 &amp; 0
+\end{pmatrix}
+}_{B}
+\underbrace{
+\begin{pmatrix}
+0 &amp; 1 \\
+0 &amp; 0
+\end{pmatrix}
+}_{A}
+=
+\underbrace{
+\begin{pmatrix}
+0 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix}
+}_{BA}.
+\]</span></p>
+</div>
+<div id="determinants-and-inverse-matrices" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Determinants and inverse matrices<a href="linear-algebra-1.html#determinants-and-inverse-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-15" class="definition"><strong>Definition 2.6  </strong></span>The <em>determinant</em> of a square matrix of order <span class="math inline">\(n\)</span> is the unique function <span class="math inline">\(\det \colon M_{n \times n} \to \mathbb{R}\)</span> such that:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\det(I) = 1\)</span>.</li>
+<li>The determinant of a matrix with two identical rows or two identical columns
+is <span class="math inline">\(0\)</span>.</li>
+<li>The determinant is a multilinear function…</li>
+</ol>
+</div>
+<p>For square matrices of order <span class="math inline">\(2\)</span> and <span class="math inline">\(3\)</span> there are straightforward formulas for
+computing the determinant.</p>
+<ul>
+<li>Given any square matrix <span class="math inline">\(A\)</span> of order <span class="math inline">\(2\)</span>, its determinant can be calculated
+using the formula:</li>
+</ul>
+<p><span class="math display">\[
+\det
+\begin{pmatrix}
+a &amp; b \\
+c &amp; d
+\end{pmatrix}
+= ad - bc.
+\]</span></p>
+<ul>
+<li>For square matrices of order <span class="math inline">\(3\)</span> the formula is a bit more involved:</li>
+</ul>
+<p><span class="math display">\[
+\det
+\begin{pmatrix}
+a &amp; b &amp; c \\
+d &amp; e &amp; f \\
+g &amp; h &amp; i
+\end{pmatrix}
+= aei + bfg + cdh - ceg - bdi - afh.
+\]</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-16" class="definition"><strong>Definition 2.7  </strong></span>A square matrix <span class="math inline">\(A \in M_{n \times n}\)</span> is called <em>invertible</em> if there exists a
+square matrix <span class="math inline">\(A^{-1}\)</span> such that</p>
+<p><span class="math display">\[
+AA^{-1} = A^{-1}A = I.
+\]</span></p>
+<p>If it exists, the matrix <span class="math inline">\(A^{-1}\)</span> is unique and is called the <em>inverse</em> of <span class="math inline">\(A\)</span>.
+A square matrix which is not invertible is called <em>singular</em> or <em>degenerate</em>.</p>
+</div>
+<p>One of the many uses of determinants is illustrated by the following claim.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-17" class="lemma"><strong>Lemma 2.1  </strong></span>A square matrix <span class="math inline">\(A \in M_{n \times n}\)</span> is invertible if and only if <span class="math inline">\(\det(A) \neq 0\)</span>.</p>
+</div>
 
 </div>
 </div>

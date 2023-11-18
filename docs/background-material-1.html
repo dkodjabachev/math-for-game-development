@@ -89,6 +89,8 @@
 <li class="chapter" data-level="2" data-path="linear-algebra-1.html"><a href="linear-algebra-1.html"><i class="fa fa-check"></i><b>2</b> Linear algebra</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="linear-algebra-1.html"><a href="linear-algebra-1.html#algebraic-vectors"><i class="fa fa-check"></i><b>2.1</b> Algebraic vectors</a></li>
+<li class="chapter" data-level="2.2" data-path="linear-algebra-1.html"><a href="linear-algebra-1.html#matrices-and-matrix-operations"><i class="fa fa-check"></i><b>2.2</b> Matrices and matrix operations</a></li>
+<li class="chapter" data-level="2.3" data-path="linear-algebra-1.html"><a href="linear-algebra-1.html#determinants-and-inverse-matrices"><i class="fa fa-check"></i><b>2.3</b> Determinants and inverse matrices</a></li>
 </ul></li>
 </ul>
 
@@ -114,26 +116,43 @@
 <div id="basic-definitions" class="section level3 hasAnchor" number="1.1.1">
 <h3><span class="header-section-number">1.1.1</span> Basic definitions<a href="background-material-1.html#basic-definitions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 1.1  </strong></span>A <em>set</em> is just a collection of things. The things a set contains can be any mathematical object and are called its <em>elements</em>. We will denote sets with capital letters like <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and elements of sets with lowercase letters like <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. If <span class="math inline">\(a\)</span> is an element of the set <span class="math inline">\(A\)</span> we will write <span class="math inline">\(a \in A\)</span> and if <span class="math inline">\(a\)</span> is not an element of the set <span class="math inline">\(A\)</span> we will write <span class="math inline">\(a \notin A\)</span>.</p>
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 1.1  </strong></span>A <em>set</em> is just a collection of things. The things a set contains can be any
+mathematical object and are called its <em>elements</em>. We will denote sets with
+capital letters like <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and elements of sets with lowercase
+letters like <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. If <span class="math inline">\(a\)</span> is an element of the set <span class="math inline">\(A\)</span> we will
+write <span class="math inline">\(a \in A\)</span> and if <span class="math inline">\(a\)</span> is not an element of the set <span class="math inline">\(A\)</span> we will write <span class="math inline">\(a \notin A\)</span>.</p>
 </div>
-<p>There are a number of ways one can define a set. If a set is finite, we can just enumerate all of its elements, like this</p>
+<p>There are a number of ways one can define a set. If a set is finite, we can just
+enumerate all of its elements, like this</p>
 <p><span class="math display">\[
 A = \{1, 2, 3, 4, 5, 6, 7\}.
-\]</span>
-A set with an infinite number of elements can be defined by enumerating enough of its elements to indicate a pattern among them and then placing an ellipsis (<span class="math inline">\(\ldots\)</span>) at either end of the list to indicate that the list continues forever, for example</p>
+\]</span></p>
+<p>A set with an infinite number of elements can be defined by enumerating enough
+of its elements to indicate a pattern among them and then placing an ellipsis
+(<span class="math inline">\(\ldots\)</span>) at either end of the list to indicate that the list continues
+forever, for example</p>
 <p><span class="math display">\[
 B = \{0, 3, 6, 9, \ldots\}.
 \]</span></p>
-<p>A set with an infinite size can aslo be defined by specifying a characteristic property that all of its elements have. For example</p>
+<p>A set with an infinite size can aslo be defined by specifying a characteristic
+property that all of its elements have. For example</p>
 <p><span class="math display">\[
 C = \{x | x \text{ is an even natural number}\}.
 \]</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 1.2  </strong></span>The <em>size</em> of a set <span class="math inline">\(A\)</span>, also referred to as the <em>cardinality</em> of the set, is the number of elements in the set and is denoted by <span class="math inline">\(|A|\)</span>. The size of a set can be either finite or infinite.</p>
+<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 1.2  </strong></span>The <em>size</em> of a set <span class="math inline">\(A\)</span>, also referred to as the <em>cardinality</em> of the set, is
+the number of elements in the set and is denoted by <span class="math inline">\(|A|\)</span>. The size of a set can
+be either finite or infinite.</p>
 </div>
-<p>In the examples above, <span class="math inline">\(|A| = 7\)</span> and <span class="math inline">\(|B| = |C| = \infty\)</span>. There is one special set that contains no elements and whose size is zero, It is called the <em>empty set</em> and is denoted by the symbol <span class="math inline">\(\emptyset\)</span>. If we are to define it using the notation above, <span class="math inline">\(\emptyset = \{\}\)</span>.</p>
+<p>In the examples above, <span class="math inline">\(|A| = 7\)</span> and <span class="math inline">\(|B| = |C| = \infty\)</span>. There is one special
+set that contains no elements and whose size is zero, It is called the <em>empty
+set</em> and is denoted by the symbol <span class="math inline">\(\emptyset\)</span>. If we are to define it using the
+notation above, <span class="math inline">\(\emptyset = \{\}\)</span>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 1.3  </strong></span>Given two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, it can happen that every element of <span class="math inline">\(A\)</span> is an element of <span class="math inline">\(B\)</span>. In this case we say that <span class="math inline">\(A\)</span> is a <em>subset</em> of <span class="math inline">\(B\)</span> and we write <span class="math inline">\(A \subseteq B\)</span>. If <span class="math inline">\(A\)</span> is a subset of <span class="math inline">\(B\)</span>, but it is not equal to <span class="math inline">\(B\)</span>, we say that <span class="math inline">\(A\)</span> is a <em>proper subset</em> of <span class="math inline">\(B\)</span> and write <span class="math inline">\(A \subset B\)</span>.</p>
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 1.3  </strong></span>Given two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, it can happen that every element of <span class="math inline">\(A\)</span> is an
+element of <span class="math inline">\(B\)</span>. In this case we say that <span class="math inline">\(A\)</span> is a <em>subset</em> of <span class="math inline">\(B\)</span> and we write
+<span class="math inline">\(A \subseteq B\)</span>. If <span class="math inline">\(A\)</span> is a subset of <span class="math inline">\(B\)</span>, but it is not equal to <span class="math inline">\(B\)</span>, we say
+that <span class="math inline">\(A\)</span> is a <em>proper subset</em> of <span class="math inline">\(B\)</span> and write <span class="math inline">\(A \subset B\)</span>.</p>
 </div>
 <p>Examples.</p>
 <ol style="list-style-type: decimal">
@@ -145,44 +164,45 @@ C = \{x | x \text{ is an even natural number}\}.
 </div>
 <div id="operations-on-sets" class="section level3 hasAnchor" number="1.1.2">
 <h3><span class="header-section-number">1.1.2</span> Operations on sets<a href="background-material-1.html#operations-on-sets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets. We can form a number of other sets from the elements of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> via the following operations.</p>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets. We can form a number of other sets from the
+elements of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> via the following operations.</p>
 <ul>
-<li>The <em>union</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set containing both the elements of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>:</li>
-</ul>
+<li><p>The <em>union</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set containing both the elements of <span class="math inline">\(A\)</span> and
+<span class="math inline">\(B\)</span>:</p>
 <p><span class="math display">\[
 A \cup B \overset{\text{def}}{=} \{x | x \in A \text{ or } x \in B\}.
-\]</span></p>
-<ul>
-<li>The <em>intersection</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set containing the common elements of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>:</li>
-</ul>
+\]</span></p></li>
+<li><p>The <em>intersection</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set containing the common elements of
+<span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>:</p>
 <p><span class="math display">\[
 A \cap B \overset{\text{def}}{=} \{x | x \in A \text{ and } x \in B\}.
-\]</span></p>
-<ul>
-<li>The <em>difference</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set of all elements in <span class="math inline">\(A\)</span> that are <em>not</em> in <span class="math inline">\(B\)</span>:</li>
-</ul>
+\]</span></p></li>
+<li><p>The <em>difference</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set of all elements in <span class="math inline">\(A\)</span> that are
+<em>not</em> in <span class="math inline">\(B\)</span>:</p>
 <p><span class="math display">\[
 A \setminus B \overset{\text{def}}{=} \{x | x \in A \text{ and } x \notin B\}.
-\]</span></p>
-<ul>
-<li>If <span class="math inline">\(B \subset A\)</span>, then the <em>complement</em> of <span class="math inline">\(B\)</span> is the set of all elements in <span class="math inline">\(A\)</span> that are not in <span class="math inline">\(B\)</span>:</li>
-</ul>
+\]</span></p></li>
+<li><p>If <span class="math inline">\(B \subset A\)</span>, then the <em>complement</em> of <span class="math inline">\(B\)</span> is the set of all elements in
+<span class="math inline">\(A\)</span> that are not in <span class="math inline">\(B\)</span>:</p>
 <p><span class="math display">\[
 \bar{B} \overset{\text{def}}{=} \{a | a \in A \text{ and } a \notin B \}.
-\]</span></p>
-<ul>
-<li>The <em>Cartesian product</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set of all <em>ordered</em> pairs of elements, the first one being from <span class="math inline">\(A\)</span> and the second from <span class="math inline">\(B\)</span>:</li>
+\]</span></p></li>
+<li><p>The <em>Cartesian product</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set of all <em>ordered</em> pairs of
+elements, the first one being from <span class="math inline">\(A\)</span> and the second from <span class="math inline">\(B\)</span>:</p></li>
 </ul>
 <p><span class="math display">\[
 A \times B \overset{\text{def}}{=} \{(a,b) | a \in A \text{ and } b \in B\}.
 \]</span></p>
-<p>Below are listed some commonly used sets and the letters used to denote them. They are represented using the so called blackboard bold typeface.</p>
+<p>Below are listed some commonly used sets and the letters used to denote them.
+They are represented using the so called blackboard bold typeface.</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\mathbb{N} = \{0,1,2,\ldots\}\)</span> is the set of natural numbers.</li>
 <li><span class="math inline">\(\mathbb{Z} = \{\ldots,-2,-1,0,1,2,\ldots\}\)</span> is the set of integers.</li>
-<li><span class="math inline">\(\mathbb{Q} = \{x | x=\frac{p}{q}, \text{ where } p,q \in \mathbb{Z} \text{ and } q \neq 0\}\)</span> is the set of rational numbers.</li>
+<li><span class="math inline">\(\mathbb{Q} = \{x | x=\frac{p}{q}, \text{ where } p,q \in \mathbb{Z} \text{
+and } q \neq 0\}\)</span> is the set of rational numbers.</li>
 <li><span class="math inline">\(\mathbb{R}\)</span> is the set of real numbers.</li>
-<li><span class="math inline">\(\mathbb{R} \setminus \mathbb{Q}\)</span> is the set of irrational numbers, e.g. <span class="math inline">\(\pi, e, \sqrt 2\)</span> etc.</li>
+<li><span class="math inline">\(\mathbb{R} \setminus \mathbb{Q}\)</span> is the set of irrational numbers, e.g.
+<span class="math inline">\(\pi, e, \sqrt 2\)</span> etc.</li>
 <li><span class="math inline">\(\mathbb{C}\)</span> is the set of complex numbers.</li>
 </ol>
 <p>We have the following subset inclusions among the sets above: <span class="math inline">\(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}.\)</span></p>
@@ -198,7 +218,11 @@ A \times B \overset{\text{def}}{=} \{(a,b) | a \in A \text{ and } b \in B\}.
 <p><span class="math display">\[
 P(x) = a_nx^n + a_{n-1}x^{n-1} + \ldots a_1x + a_0.
 \]</span></p>
-<p>Here <span class="math inline">\(x\)</span> is considered to be a variable that can take any value and the <span class="math inline">\(a_i\)</span>s are arbitrary real numbers called the <em>coefficients</em> of the polynomial. Each of the summands <span class="math inline">\(a_ix^i\)</span> is called a <em>term</em> of the polynomial. The exponent of <span class="math inline">\(x\)</span> in a term is called the <em>degree</em> of the term and the degree of the polynomial is the largest degree among its terms with non-zero coefficient.</p>
+<p>Here <span class="math inline">\(x\)</span> is considered to be a variable that can take any value and the <span class="math inline">\(a_i\)</span>s
+are arbitrary real numbers called the <em>coefficients</em> of the polynomial. Each of
+the summands <span class="math inline">\(a_ix^i\)</span> is called a <em>term</em> of the polynomial. The exponent of <span class="math inline">\(x\)</span>
+in a term is called the <em>degree</em> of the term and the degree of the polynomial is
+the largest degree among its terms with non-zero coefficient.</p>
 </div>
 <p>Some examples of polynomials are:</p>
 <ol style="list-style-type: decimal">
@@ -208,20 +232,28 @@ P(x) = a_nx^n + a_{n-1}x^{n-1} + \ldots a_1x + a_0.
 <li><span class="math inline">\(P_3(x) = x^3 - 4x^2 + 5x + 2\)</span>, a cubic polynomial with <span class="math inline">\(\deg{P_3} = 3\)</span>.</li>
 </ol>
 <div class="remark">
-<p><span id="unlabeled-div-5" class="remark"><em>Remark</em>. </span>The zero polynomial <span class="math inline">\(P(x) = 0\)</span> is somewhat special. Even though it looks like a constant polynomial of degree <span class="math inline">\(0\)</span>, its degree is undefined as it has no non-zero terms.</p>
+<p><span id="unlabeled-div-5" class="remark"><em>Remark</em>. </span>The zero polynomial <span class="math inline">\(P(x) = 0\)</span> is somewhat special. Even though it looks like a
+constant polynomial of degree <span class="math inline">\(0\)</span>, its degree is undefined as it has no non-zero
+terms.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-6" class="definition"><strong>Definition 1.5  </strong></span>A <em>root</em> of a polynomial <span class="math inline">\(P(x)\)</span> is a solution of the equation <span class="math inline">\(P(x) = 0\)</span>, i.e. a real number <span class="math inline">\(a\)</span> such that <span class="math inline">\(P(a) = 0\)</span>.</p>
+<p><span id="def:unlabeled-div-6" class="definition"><strong>Definition 1.5  </strong></span>A <em>root</em> of a polynomial <span class="math inline">\(P(x)\)</span> is a solution of the equation <span class="math inline">\(P(x) = 0\)</span>, i.e. a
+real number <span class="math inline">\(a\)</span> such that <span class="math inline">\(P(a) = 0\)</span>.</p>
 </div>
 <p>For polynomials of low degree, there are explicit formulas for their roots.</p>
 <ol style="list-style-type: decimal">
-<li><p>Degree <span class="math inline">\(0\)</span> polynomials have no roots. If <span class="math inline">\(P(x) = c\)</span> and <span class="math inline">\(c \neq 0\)</span>, then there is no <span class="math inline">\(x\)</span> which can satisfy the equation <span class="math inline">\(P(x) = 0\)</span>.</p></li>
-<li><p>Degree <span class="math inline">\(1\)</span> polynomials are trivial. If <span class="math inline">\(P(x) = ax + b\)</span>, then provided <span class="math inline">\(a \neq 0\)</span> there is a single root given by <span class="math inline">\(x = -\frac{b}{a}\)</span>. If <span class="math inline">\(b = 0\)</span>, the root is <span class="math inline">\(x = 0\)</span>.</p></li>
-<li><p>Degree <span class="math inline">\(2\)</span> polynomials can be solved using the quadratic formula. If <span class="math inline">\(P(x) = ax^2 + bx + c\)</span>, then the two roots <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> of <span class="math inline">\(P\)</span> are given by:
+<li><p>Degree <span class="math inline">\(0\)</span> polynomials have no roots. If <span class="math inline">\(P(x) = c\)</span> and <span class="math inline">\(c \neq 0\)</span>, then
+there is no <span class="math inline">\(x\)</span> which can satisfy the equation <span class="math inline">\(P(x) = 0\)</span>.</p></li>
+<li><p>Degree <span class="math inline">\(1\)</span> polynomials are trivial. If <span class="math inline">\(P(x) = ax + b\)</span>, then provided <span class="math inline">\(a \neq 0\)</span> there is a single root given by <span class="math inline">\(x = -\frac{b}{a}\)</span>. If <span class="math inline">\(b = 0\)</span>, the root
+is <span class="math inline">\(x = 0\)</span>.</p></li>
+<li><p>Degree <span class="math inline">\(2\)</span> polynomials can be solved using the quadratic formula. If $P(x) =</p></li>
+<li><p>ax^2 + bx + c$, then the two roots <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> of <span class="math inline">\(P\)</span> are given by:
 <span class="math display">\[
 x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
 \]</span>
-The quantity <span class="math inline">\(\Delta = b^2 - 4ac\)</span> is called the <em>discriminant</em> of the quadratic polynomial. Depending on whether the discriminant is positive, negative or zero we can have the following cases:</p>
+The quantity <span class="math inline">\(\Delta = b^2 - 4ac\)</span> is called the <em>discriminant</em> of the quadratic
+polynomial. Depending on whether the discriminant is positive, negative or zero
+we can have the following cases:</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\Delta &gt; 0\)</span>, then <span class="math inline">\(P\)</span> has two different real roots.</li>
 <li><span class="math inline">\(\Delta = 0\)</span>, then <span class="math inline">\(P\)</span> has one double real root.</li>
@@ -230,17 +262,32 @@ The quantity <span class="math inline">\(\Delta = b^2 - 4ac\)</span> is called t
 </ol>
 <p>Examples.</p>
 <ol style="list-style-type: decimal">
-<li>Let <span class="math inline">\(P(x) = x^2 - 3x + 2\)</span>. If we compute its discriminant we get <span class="math inline">\(\Delta = 1 &gt; 0\)</span> so we expect to have two different real roots. Indeed, we can factor <span class="math inline">\(P\)</span> as <span class="math inline">\(P(x) = (x - 1)(x - 2)\)</span> and from here it is clear that the roots are <span class="math inline">\(x_1 = 1\)</span> and <span class="math inline">\(x_2 = 2\)</span>.</li>
-<li>Let <span class="math inline">\(P(x) = x^2 + 1\)</span>. In this case the discriminant <span class="math inline">\(\Delta = -4 &lt; 0\)</span> so the polynomial should not have any real roots. We know that this is the case as there are no real numbers <span class="math inline">\(x\)</span> such that <span class="math inline">\(x^2 = -1\)</span>.</li>
-<li>Let <span class="math inline">\(P(x) = 0\)</span>. The zero polynomial is again special as it has an infinite number of roots – any real number <span class="math inline">\(x\)</span> satisfies <span class="math inline">\(P(x) = 0\)</span>.</li>
+<li>Let <span class="math inline">\(P(x) = x^2 - 3x + 2\)</span>. If we compute its discriminant we get <span class="math inline">\(\Delta = 1 &gt; 0\)</span> so we expect to have two different real roots. Indeed, we can factor <span class="math inline">\(P\)</span>
+as <span class="math inline">\(P(x) = (x - 1)(x - 2)\)</span> and from here it is clear that the roots are <span class="math inline">\(x_1 = 1\)</span> and <span class="math inline">\(x_2 = 2\)</span>.</li>
+<li>Let <span class="math inline">\(P(x) = x^2 + 1\)</span>. In this case the discriminant <span class="math inline">\(\Delta = -4 &lt; 0\)</span> so the
+polynomial should not have any real roots. We know that this is the case as
+there are no real numbers <span class="math inline">\(x\)</span> such that <span class="math inline">\(x^2 = -1\)</span>.</li>
+<li>Let <span class="math inline">\(P(x) = 0\)</span>. The zero polynomial is again special as it has an infinite
+number of roots – any real number <span class="math inline">\(x\)</span> satisfies <span class="math inline">\(P(x) = 0\)</span>.</li>
 </ol>
-<p>The above observations are summarized in a theorem, known as the <em>fundamental theorem of algebra</em>, that specifies exactly how many roots a non-zero degree <span class="math inline">\(n\)</span> polynomial with complex coefficients can have.</p>
+<p>The above observations are summarized in a theorem, known as the <em>fundamental
+theorem of algebra</em>, that specifies exactly how many roots a non-zero degree <span class="math inline">\(n\)</span>
+polynomial with complex coefficients can have.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-7" class="theorem"><strong>Theorem 1.1  </strong></span>If <span class="math inline">\(P(x)\)</span> is a non-zero degree <span class="math inline">\(n\)</span> polynomial with complex coefficients, then <span class="math inline">\(P(x)\)</span> has exactly <span class="math inline">\(n\)</span> complex roots, counted with multiplicity.</p>
+<p><span id="thm:unlabeled-div-7" class="theorem"><strong>Theorem 1.1  </strong></span>If <span class="math inline">\(P(x)\)</span> is a non-zero degree <span class="math inline">\(n\)</span> polynomial with complex coefficients, then
+<span class="math inline">\(P(x)\)</span> has exactly <span class="math inline">\(n\)</span> complex roots, counted with multiplicity.</p>
 </div>
-<p>As we do not know yet what a complex number is, what this theorem will mean for us is that an arbitrary non-zero degree <span class="math inline">\(n\)</span> polynomial with real coefficients will have <em>at most</em> <span class="math inline">\(n\)</span> real roots.</p>
+<p>As we do not know yet what a complex number is, what this theorem will mean for
+us is that an arbitrary non-zero degree <span class="math inline">\(n\)</span> polynomial with real coefficients
+will have <em>at most</em> <span class="math inline">\(n\)</span> real roots.</p>
 <div class="remark">
-<p><span id="unlabeled-div-8" class="remark"><em>Remark</em>. </span>There are explicit, albeit complicated, formulas for the roots of cubic and quartic polynomials. By a theorem known as the Abel’s impossibility theorem, we know that there are no solutions in radicals for polynomials of degree <span class="math inline">\(5\)</span> or higher. This means that we cannot express the roots of those polynomials as expressions involving addition, subtraction, multiplication, division, raising to integer powers and taking of n-th roots, as in the quadratic formula. For example, the simple looking equation</p>
+<p><span id="unlabeled-div-8" class="remark"><em>Remark</em>. </span>There are explicit, albeit complicated, formulas for the roots of cubic and
+quartic polynomials. By a theorem known as the Abel’s impossibility theorem, we
+know that there are no solutions in radicals for polynomials of degree <span class="math inline">\(5\)</span> or
+higher. This means that we cannot express the roots of those polynomials as
+expressions involving addition, subtraction, multiplication, division, raising
+to integer powers and taking of n-th roots, as in the quadratic formula. For
+example, the simple looking equation</p>
 <p><span class="math display">\[
 x^5 + x - 1 = 0
 \]</span></p>
@@ -258,7 +305,7 @@ x^5 + x - 1 = 0
 \sin^2(\alpha) + \cos^2(\alpha) = 1.
 \]</span></p>
 <ul>
-<li>Sum and difference of angles identites</li>
+<li>Sum and difference of angles identities</li>
 </ul>
 <p><span class="math display">\[
 \begin{align}
