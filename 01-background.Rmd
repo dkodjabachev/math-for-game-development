@@ -29,11 +29,11 @@ $$
 B = \{0, 3, 6, 9, \ldots\}.
 $$
 
-A set with an infinite size can aslo be defined by specifying a characteristic
+A set with an infinite size can also be defined by specifying a characteristic
 property that all of its elements have. For example
 
 $$
-C = \{x | x \text{ is an even natural number}\}.
+C = \{x | x \text{ is even}\}.
 $$
 
 ::: {.definition}

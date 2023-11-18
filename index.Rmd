@@ -9,9 +9,14 @@ date: "Last updated: `r format(Sys.time(), '%d %B, %Y')`"
 
 # {-}
 
-The following is a preliminary list of topics that will be covered in the course of the lectures. The notes are being updated semi-continuously, so one can occasionally find them in an incomplete state. In such a case, the curious reader is advised to try again later.
+The following is a preliminary list of topics that will be covered in the course
+of the lectures. The notes are being updated semi-continuously, so one can
+occasionally find them in an incomplete state. In such a case, the curious
+reader is advised to try again later.
 
-The mathematical concepts discussed in the lectures are simultaneously implemented in a C++ library called Aleph zero ($\aleph_0$), whose GitHub repository can be found [here](https://github.com/dkodjabachev/aleph0).
+The mathematical concepts discussed in the lectures are simultaneously
+implemented in a C++ library called Aleph zero ($\aleph_0$), whose GitHub
+repository can be found [here](https://github.com/dkodjabachev/aleph0).
 
 #### Background material {-}
 1. Sets, functions, polynomials

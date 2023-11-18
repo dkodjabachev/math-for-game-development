@@ -192,15 +192,15 @@ M_{m \times n}$ and $\lambda \in \mathbb{R}$.
   $$
   A =
   \begin{pmatrix}
-  1 & 2 & 3 \\
-  4 & 5 & 6
+    1 & 2 & 3 \\
+    4 & 5 & 6
   \end{pmatrix}
   \text{, }
   A' =
   \begin{pmatrix}
-  1 & 4 \\
-  2 & 5 \\
-  3 & 6
+    1 & 4 \\
+    2 & 5 \\
+    3 & 6
   \end{pmatrix}.
   $$
 
@@ -230,28 +230,28 @@ $n$ products. Formally
 $$
 \underbrace{
   \begin{pmatrix}
-   c_{11} & \cdots & c_{1s} \\
-   c_{21} & \cdots & c_{2s} \\
-   \vdots & \color{blue}{c_{ij}} & \vdots \\
-   c_{m1} & \cdots & c_{ms}
+    c_{11} & \cdots & c_{1s} \\
+    c_{21} & \cdots & c_{2s} \\
+    \vdots & \color{blue}{c_{ij}} & \vdots \\
+    c_{m1} & \cdots & c_{ms}
 \end{pmatrix}
 }_{C}
 =
 \underbrace{
   \begin{pmatrix}
-   a_{11}              & \cdots              & a_{1n}              \\
-   \vdots              & \ddots              & \vdots              \\
-   \color{red}{a_{i1}} & \color{red}{\cdots} & \color{red}{a_{in}} \\
-   \vdots              & \ddots              & \vdots              \\
-   a_{m1}              & \cdots              & a_{mn}
+    a_{11}              & \cdots              & a_{1n}              \\
+    \vdots              & \ddots              & \vdots              \\
+    \color{red}{a_{i1}} & \color{red}{\cdots} & \color{red}{a_{in}} \\
+    \vdots              & \ddots              & \vdots              \\
+    a_{m1}              & \cdots              & a_{mn}
   \end{pmatrix}
 }_{A}
 \underbrace{
   \begin{pmatrix}
-   b_{11} & \cdots & \color{green}{b_{1j}} & \cdots & b_{1s} \\
-   b_{21} & \cdots & \color{green}{b_{2j}} & \cdots & b_{2s} \\
-   \vdots & \ddots & \color{green}{\vdots} & \ddots & \vdots \\
-   b_{n1} & \cdots & \color{green}{b_{nj}} & \cdots & b_{ns}
+    b_{11} & \cdots & \color{green}{b_{1j}} & \cdots & b_{1s} \\
+    b_{21} & \cdots & \color{green}{b_{2j}} & \cdots & b_{2s} \\
+    \vdots & \ddots & \color{green}{\vdots} & \ddots & \vdots \\
+    b_{n1} & \cdots & \color{green}{b_{nj}} & \cdots & b_{ns}
   \end{pmatrix}
 }_{B},
 $$
@@ -266,7 +266,6 @@ $$
         \cdots +
           \color{red}{a_{in}}\color{green}{b_{nj}}.
 $$
-
 :::
 
 ::: {.remark}
@@ -303,41 +302,41 @@ $$
 $$
 \underbrace{
 \begin{pmatrix}
-0 & 1 \\
-0 & 0
+  0 & 1 \\
+  0 & 0
 \end{pmatrix}
 }_{A}
 \underbrace{
 \begin{pmatrix}
-0 & 0 \\
-1 & 0
+  0 & 0 \\
+  1 & 0
 \end{pmatrix}
 }_{B}
 =
 \underbrace{
 \begin{pmatrix}
-1 & 0 \\
-0 & 0
+  1 & 0 \\
+  0 & 0
 \end{pmatrix}
 }_{AB}
 \text{ but }
 \underbrace{
 \begin{pmatrix}
-0 & 0 \\
-1 & 0
+  0 & 0 \\
+  1 & 0
 \end{pmatrix}
 }_{B}
 \underbrace{
 \begin{pmatrix}
-0 & 1 \\
-0 & 0
+  0 & 1 \\
+  0 & 0
 \end{pmatrix}
 }_{A}
 =
 \underbrace{
 \begin{pmatrix}
-0 & 0 \\
-0 & 1
+  0 & 0 \\
+  0 & 1
 \end{pmatrix}
 }_{BA}.
 $$
@@ -363,8 +362,8 @@ computing the determinant.
 $$
 \det
 \begin{pmatrix}
-a & b \\
-c & d
+  a & b \\
+  c & d
 \end{pmatrix}
 = ad - bc.
 $$
@@ -374,9 +373,9 @@ $$
 $$
 \det
 \begin{pmatrix}
-a & b & c \\
-d & e & f \\
-g & h & i
+  a & b & c \\
+  d & e & f \\
+  g & h & i
 \end{pmatrix}
 = aei + bfg + cdh - ceg - bdi - afh.
 $$
