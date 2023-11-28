@@ -518,6 +518,151 @@ A square matrix which is not invertible is called <em>singular</em> or <em>degen
 <div class="lemma">
 <p><span id="lem:unlabeled-div-17" class="lemma"><strong>Lemma 2.1  </strong></span>A square matrix <span class="math inline">\(A \in M_{n \times n}\)</span> is invertible if and only if <span class="math inline">\(\det(A) \neq 0\)</span>.</p>
 </div>
+<p>Properties. Let and <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are two invertible <span class="math inline">\(n \times n\)</span> matrices. We
+have the following properties:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\((A^{-1})^{-1} = A\)</span></li>
+<li><span class="math inline">\((A&#39;)^{-1} = (A^{-1})&#39;\)</span></li>
+<li><span class="math inline">\((AB)^{-1} = B^{-1}A^{-1}\)</span></li>
+<li><span class="math inline">\(\det(A^{-1}) = (\det(A))^{-1}\)</span></li>
+</ol>
+<p>We will describe a general formula expressing the inverse of an <span class="math inline">\(n \times n\)</span>
+matrix <span class="math inline">\(A\)</span>. For this, we will need a couple of definitions. A <em>submatrix</em> of <span class="math inline">\(A\)</span>
+is any matrix obtained by deleting a number of rows and columns of <span class="math inline">\(A\)</span>. Let
+<span class="math inline">\(M_{ij}\)</span> denote the matrix obtained by deleting the <span class="math inline">\(i\)</span>-th row and <span class="math inline">\(j\)</span>-th column
+of <span class="math inline">\(A\)</span>, i.e.</p>
+<p><span class="math display">\[
+M_{ij} =
+\begin{pmatrix}
+  a_{11}    &amp; \cdots &amp; a_{1,j-1}   &amp; a_{1,j+1}   &amp; \cdots &amp; a_{1n}    \\
+  \vdots    &amp; \ddots &amp; \vdots      &amp; \vdots      &amp; \ddots &amp; \vdots    \\
+  a_{i-1,1} &amp; \cdots &amp; a_{i-1,j-1} &amp; a_{i-1,j+1} &amp; \cdots &amp; a_{i-1,n} \\
+  a_{i+1,1} &amp; \cdots &amp; a_{i+1,j-1} &amp; a_{i+1,j+1} &amp; \cdots &amp; a_{i+1,n} \\
+  \vdots    &amp; \ddots &amp; \vdots      &amp; \vdots      &amp; \ddots &amp; \vdots    \\
+  a_{n1}    &amp; \cdots &amp; a_{n,j-1}   &amp; a_{n,j+1}   &amp; \cdots &amp; a_{nn}
+\end{pmatrix}.
+\]</span></p>
+<p>There are <span class="math inline">\(n^2\)</span> such submatrices, one for each value of the indices <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>
+as they run through the set <span class="math inline">\(\{1,\ldots,n\}\)</span>. The expression</p>
+<p><span class="math display">\[
+c_{ij} = (-1)^{i + j}\det(M_{ij})
+\]</span></p>
+<p>is called the <em><span class="math inline">\((i,j)\)</span> cofactor</em> of <span class="math inline">\(A\)</span>. We can arrange all of the <span class="math inline">\(c_{ij}\)</span> in
+an <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(C\)</span> called the <em>cofactor matrix</em> of <span class="math inline">\(A\)</span>:</p>
+<p><span class="math display">\[
+C =
+\begin{pmatrix}
+  c_{11} &amp; c_{12} &amp; \cdots &amp; c_{1n} \\
+  c_{21} &amp; c_{22} &amp; \cdots &amp; c_{2n} \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  c_{n1} &amp; c_{n2} &amp; \cdots &amp; c_{nn}
+\end{pmatrix}.
+\]</span></p>
+<p>With these definitions at hand we can now state the following claim.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-18" class="lemma"><strong>Lemma 2.2  </strong></span>Let <span class="math inline">\(A\)</span> be an arbitrary square matrix of order <span class="math inline">\(n\)</span> and suppose that <span class="math inline">\(\det(A) \neq 0\)</span>. Then, the inverse of <span class="math inline">\(A\)</span> is given by:</p>
+<p><span class="math display">\[
+A^{-1} = \frac{1}{\det(A)}C&#39;,
+\]</span></p>
+<p>where <span class="math inline">\(C&#39;\)</span> is the transpose of the matrix of cofactors of <span class="math inline">\(A\)</span>.</p>
+</div>
+<p>Example. We will illustrate the formula in the case of <span class="math inline">\(n = 3\)</span>. Let <span class="math inline">\(A\)</span> be the
+matrix</p>
+<p><span class="math display">\[
+A =
+\begin{pmatrix}
+  \cos \alpha  &amp; \sin \alpha &amp; 0 \\
+  -\sin \alpha &amp; \cos \alpha &amp; 0 \\
+  0            &amp; 0           &amp; 1
+\end{pmatrix}.
+\]</span>
+First, we will calculate the determinant of <span class="math inline">\(A\)</span> using the formula for square matrices of order <span class="math inline">\(3\)</span>.</p>
+<p><span class="math display">\[
+\det(A) = \cos\alpha\cos\alpha - (\sin\alpha (-\sin\alpha)) = \cos^2\alpha + \sin^2\alpha = 1.
+\]</span></p>
+<p>The determinant is nonzero so we know that <span class="math inline">\(A\)</span> is invertible. Next, we have to
+form the nine submatrices of <span class="math inline">\(A\)</span> of order <span class="math inline">\(2\)</span>. These are</p>
+<p><span class="math display">\[
+\begin{array}{l l l}
+M_{11} =
+\begin{pmatrix}
+  \cos\alpha &amp; 0 \\
+  0          &amp; 1
+\end{pmatrix}, &amp;
+M_{12} =
+\begin{pmatrix}
+  -\sin\alpha &amp; 0 \\
+  0           &amp; 1
+\end{pmatrix}, &amp;
+M_{13} =
+\begin{pmatrix}
+  -\sin\alpha &amp; \cos\alpha \\
+  0           &amp; 0
+\end{pmatrix}, \\
+M_{21} =
+\begin{pmatrix}
+  \sin\alpha &amp; 0 \\
+  0          &amp; 1
+\end{pmatrix}, &amp;
+M_{22} =
+\begin{pmatrix}
+  \cos\alpha &amp; 0 \\
+  0          &amp; 1
+\end{pmatrix}, &amp;
+M_{23} =
+\begin{pmatrix}
+  \cos\alpha &amp; \sin\alpha \\
+  0          &amp; 0
+\end{pmatrix}, \\
+M_{31} =
+\begin{pmatrix}
+  \sin\alpha &amp; 0 \\
+  \cos\alpha &amp; 0
+\end{pmatrix}, &amp;
+M_{32} =
+\begin{pmatrix}
+  \cos\alpha  &amp; 0 \\
+  -\sin\alpha &amp; 0
+\end{pmatrix}, &amp;
+M_{33} =
+\begin{pmatrix}
+  \cos\alpha  &amp; \sin\alpha \\
+  -\sin\alpha &amp; \cos\alpha
+\end{pmatrix}.
+\end{array}
+\]</span></p>
+<p>From here, we calculate the corresponding cofactors which are the determinants
+of each <span class="math inline">\(M_{ij}\)</span> taken with the appropriate sign.</p>
+<p><span class="math display">\[
+\begin{array}{l l l}
+  c_{11} = \cos\alpha,  &amp; c_{12} = \sin\alpha,  &amp; c_{13} = 0, \\
+  c_{21} = -\sin\alpha, &amp; c_{22} = \cos\alpha,  &amp; c_{23} = 0, \\
+  c_{31} = 0,           &amp; c_{32} = 0,           &amp; c_{33} = 1.
+\end{array}
+\]</span></p>
+<p>Finally, we arrange <span class="math inline">\(c_{ij}\)</span> in the cofactor matrix, take its transpose and
+multiply it by <span class="math inline">\(\det(A)\)</span> to obtain the inverse of <span class="math inline">\(A\)</span>.</p>
+<p><span class="math display">\[
+A^{-1} =
+  \frac{1}{\det(A)}
+  \begin{pmatrix}
+    c_{11} &amp; c_{12} &amp; c_{13} \\
+    c_{21} &amp; c_{22} &amp; c_{23} \\
+    c_{31} &amp; c_{32} &amp; c_{33}
+  \end{pmatrix}&#39; =
+  \frac{1}{1}
+  \begin{pmatrix}
+    \cos\alpha  &amp; \sin\alpha &amp; 0 \\
+    -\sin\alpha &amp; \cos\alpha &amp; 0 \\
+    0           &amp; 0          &amp; 1
+  \end{pmatrix}&#39; =
+  \begin{pmatrix}
+    \cos\alpha &amp; -\sin\alpha &amp; 0 \\
+    \sin\alpha &amp; \cos\alpha  &amp; 0 \\
+    0          &amp; 0           &amp; 1
+  \end{pmatrix}.
+\]</span></p>
+<p>A direct calculation now verifies that <span class="math inline">\(AA^{-1} = A^{-1}A = I\)</span>.</p>
 
 </div>
 </div>
